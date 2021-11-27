@@ -1,0 +1,7 @@
+[
+    { "name": "Raised", "size": "High", "cultivar": "Drip Irrigation", "rotation": "None", "year": "2020"},
+    { "name": "Completed", "size": "Low", "cultivar": "Paddy field managing", "rotation": "None", "year": "2018" },
+    { "name": "Raised and Assigned", "size": "Safety", "cultivar": "Plough Field", "rotation": "None", "year": "2021"},
+    { "name": "On Hold", "size": "Normal", "cultivar": "Manure and Fertilizer", "rotation": "None", "year": "2020" }
+  ]
+  
