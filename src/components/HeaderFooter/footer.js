@@ -9,30 +9,23 @@ import TwitterIcon from 'mdi-react/TwitterIcon';
 
 export default function Footer() {
   return(
-   
-  <footer className="v-footer" data-booted="true">
-   {  /*  <span small="" style={{"margin-left": "50px"}}>Icons by{' '} 
-  <a target="_blank" href="https://icons8.com/">Icons8</a>
-      </span>*/}
-  
-        <div className="spacer"></div>
        
-      <div style={{"margin-right": "20px"}}>
-    <a href="" target="_blank" className="mr-1 v-btn-footer v-btn--icon v-btn--round theme--light v-size--small">
-      <span className="v-btn__content"><WebIcon size={24} /></span></a>
+       
+      <div style={{"float": "right"}}>
+    <a href="#" className="margin-one footer-button footer-button-icon footer-button-round button-color button-size-small">
+      <span className="footer-icon"><WebIcon size={24} /></span></a>
       
-     <a href="" target="_blank" className="mr-1 v-btn-footer v-btn--icon v-btn--round theme--light v-size--small"><span className="v-btn__content"><FacebookIcon size={24} /></span></a>
+     <a href="#" className="margin-one footer-button footer-button-icon footer-button-round button-color button-size-small"><span className="footer-icon"><FacebookIcon size={24} /></span></a>
       
-      <a href="" target="_blank" className="mr-1 v-btn-footer v-btn--icon v-btn--round theme--light v-size--small"><span className="v-btn__content"><TwitterIcon size={24} /></span></a>
+      <a href="#" className="margin-one footer-button footer-button-icon footer-button-round button-color button-size-small"><span className="footer-icon"><TwitterIcon size={24} /></span></a>
       
-      <a href="" target="_blank" className="mr-1 v-btn-footer v-btn--icon v-btn--round theme--light v-size--small"><span className="v-btn__content"><YoutubeIcon size={24} /></span></a>
+      <a href="#" className="margin-one footer-button footer-button-icon footer-button-round button-color button-size-small"><span className="footer-icon"><YoutubeIcon size={24} /></span></a>
       
       <span style={{"margin-left": "10px", "align-items": "center", "color": "rgb(79, 79, 79)", "top": "0"}}> © 2021 
     
       </span>
     </div>
-     
-   </footer>
+  
      
       );
 }

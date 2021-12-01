@@ -1,6 +1,6 @@
 import React from "react";
 import farmsimple from "../../images/logo.jpg";
-import "./Headerfooter.css";
+import "./header.css";
 
 export default function Header() {
   return (

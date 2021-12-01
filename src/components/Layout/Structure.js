@@ -23,7 +23,8 @@ export default function Structure({children}) {
         <Content style={{ backgroundColor:'white' ,overflow:'auto',maxHeight:'-webkit-fill-available'}}>
           {children}
         </Content>
-        <Footer style={{ textAlign: 'center',height:'48px',position:'sticky',backgroundColor:'#dcdcdc',bottom:0,}}>
+        <Footer style={{ textAlign: 'center',height:'48px',position:'sticky',backgroundColor:'#dcdcdc',bottom:0, padding: '10px 30px'}}>
+          <Footerbar/>
           </Footer>
       </Layout>
     </Layout>
