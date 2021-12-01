@@ -3,17 +3,12 @@ import MaterialTable from 'material-table';
 import CreateIcon from '@mui/icons-material/Create';
 import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
 import DeleteIcon from '@mui/icons-material/Delete';
-
+import SiloData from '../../../../Data/SiloData';
 export default function SiloTable() {
-    const [open, setOpen] = React.useState(false);
+    
     
 
-    const [data, setData] = React.useState([
-      { name: 'Linta Paddock', capacity: '23', unit:'m3', cultivar: 'fallow', status: 'N' },
-      { name: 'K2K Paddock', capacity: '50', unit:'f3', cultivar: 'dfg', status: 'C' },
-      { name: 'Harry Woods Paddock', capacity: '40', unit:'wt', cultivar: 'abc', status: 'T' },
-      { name: 'Peter Dein Co.', capacity: '10', unit:'t', cultivar: 'abc', status: 'TS' }
-       ])
+   
   const columns = [{
       title: 'Name', field: 'name'
   },
@@ -34,42 +29,14 @@ export default function SiloTable() {
     return (
         <div>
             <MaterialTable title="Silos"
-                data={data}
+                data={SiloData}
                 columns={columns}
                 editable={{
-                
-                        onRowAdd: newData =>
-          new Promise((resolve, reject) => {
-            setTimeout(() => {
-              setData([...data, newData]);
-              
-              resolve();
-            }, 1000)
-          }),
-        onRowUpdate: (newData, oldData) =>
-          new Promise((resolve, reject) => {
-            setTimeout(() => {
-              const dataUpdate = [...data];
-              const index = oldData.tableData.id;
-              dataUpdate[index] = newData;
-              setData([...dataUpdate]);
-
-              resolve();
-            }, 1000)
-          }),
-          
-        onRowDelete: oldData =>
-          new Promise((resolve, reject) => {
-            setTimeout(() => {
-              const dataDelete = [...data];
-              const index = oldData.tableData.id;
-              dataDelete.splice(index, 1);
-              setData([...dataDelete]);
-              
-              resolve()
-            }, 1000)
-          }),
+                  onRowAdd:(newRow)=> new Promise((resolve,reject)=>{}),
+                  onRowUpdate:(newRow,oldRow)=> new Promise(()=>{}),
+                  onRowDelete:(selectedRow)=> new Promise(()=>{})
                 }}
+               
                
                 options={{
                     actionsColumnIndex: -1,

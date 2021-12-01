@@ -57,13 +57,13 @@ export default function Navbar(props) {
               <Menu.Item key="19" icon={<GiField />}><Link to="/Farms"/>Farms</Menu.Item>
               <Menu.Item key="20" icon={<BsFillCloudLightningRainFill />}>Rain</Menu.Item>
               <Menu.Item key="21" icon={<GiGrainBundle />}><Link to="/Cultivars"/>Cultivars</Menu.Item>
-              <Menu.Item key="22" icon={<GiGoat />}>Livestock</Menu.Item>
+              <Menu.Item key="22" icon={<GiGoat />}><Link to="/Livestock"/>Livestock</Menu.Item>
               <Menu.Item key="23" icon={<FaTools />}><Link to="/Equipments"/>Equipment</Menu.Item>
               <Menu.Item key="24" icon={<GiChemicalDrop />}><Link to="/Chemicals"/>Chemicals</Menu.Item>
-              <Menu.Item key="25" icon={<GiFertilizerBag />}>Fertilizers</Menu.Item>
+              <Menu.Item key="25" icon={<GiFertilizerBag />}><Link to="/Fertiliser"/>Fertilizers</Menu.Item>
               <Menu.Item key="26" icon={<FaUsers />}><Link to="/Users"/>Users</Menu.Item>
-              <Menu.Item key="27" icon={<FaSprayCan />}>Nozzles</Menu.Item>
-              <Menu.Item key="28" icon={<MdVerified />}>Water Licences</Menu.Item>
+              <Menu.Item key="27" icon={<FaSprayCan />}><Link to="/Nozzles"/>Nozzles</Menu.Item>
+              <Menu.Item key="28" icon={<MdVerified />}><Link to="/Waterlicence"/>Water Licences</Menu.Item>
               
             </SubMenu>
             <Menu.Item key="29" icon={<FaCalendarAlt />}>

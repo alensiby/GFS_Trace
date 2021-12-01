@@ -76,7 +76,7 @@ export default function Equipments() {
             actionsColumnIndex:-1
           }}
           icons={{
-            Export: () => <img src={Export}></img>,
+            Export: () => <img src={Export} alt="export"></img>,
             Add: () => <AddCircleRoundedIcon fontSize="large" color="primary" />,
             Edit: () => <CreateIcon color="action" />,
             Delete: () => <DeleteIcon color="action" />
