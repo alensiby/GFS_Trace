@@ -10,7 +10,7 @@ export default function FarmTable()  {
         <div>
           <Menu pointing>
             <Menu.Item
-              name='PADDOCK'
+              name='PADDOCKS'
               active={state === 'PADDOCK'}
              color="green"
              onClick={() => setState("PADDOCK")}

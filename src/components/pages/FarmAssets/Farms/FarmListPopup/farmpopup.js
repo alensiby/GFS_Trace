@@ -40,12 +40,15 @@ const deleteRow=()=>{
       >
         <Modal.Header>Farm Options</Modal.Header>
         <Modal.Content>
-        <div  style={{"margin-left":"35px"}}>
+        <div  style={{"margin-left":"65px"}}>
           <Modal.Description>
           
           <Button basic color='green' onClick={() => setAddOpen(true)}>
+          <span style={{"fontSize":"18px", "color":"white"}}>.</span>
           <Icon name='plus' />
+          <span style={{"fontSize":"18px", "color":"white"}}>.</span>
             Add Farm 
+            <span style={{"fontSize":"18px", "color":"white"}}>..</span>
           </Button>
           
           </Modal.Description>
@@ -54,8 +57,12 @@ const deleteRow=()=>{
           <Modal.Description style={{"margin-top":"10px"}}>
           <Button basic color='blue' onClick={() => {setEditOpen(true);
         setState(Value);}}>
+          
+          <span style={{"fontSize":"18px", "color":"white"}}>.</span>
           <Icon name='pencil' />
-            Edit Farm
+          <span style={{"fontSize":"18px", "color":"white"}}>.</span>
+            Edit Farm 
+            <span style={{"fontSize":"18px", "color":"white"}}>..</span>
           </Button>
           
           </Modal.Description>
