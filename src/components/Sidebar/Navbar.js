@@ -45,15 +45,15 @@ export default function Navbar(props) {
             <SubMenu  key="sub2" icon={<FaWarehouse />} title="Inventory">
               <Menu.Item key="12" icon={<VscOpenPreview />}>Inventory Reports</Menu.Item>
               <Menu.Item key="13" icon={<GiGrain />}>Grain</Menu.Item>
-              <Menu.Item key="14" icon={<GiChemicalDrop/>}>Chemical</Menu.Item>
+              <Menu.Item key="14" icon={<GiChemicalDrop/>}><Link to="/InventoryChemical"/>Chemical</Menu.Item>
               <Menu.Item key="15" icon={<GiFertilizerBag />}>Fertilizer</Menu.Item>
               <Menu.Item key="16" icon={<GiFuelTank/>}>Fuel</Menu.Item>
               <Menu.Item key="17" icon={<FaHandHoldingWater />}>Water</Menu.Item>
             </SubMenu>
-            <SubMenu  key="sub3" icon={<BsPeopleFill />} title="Personal">
+            <SubMenu  key="sub3" icon={<BsPeopleFill />} title="Personnel">
               <Menu.Item key="18" icon={<FaUserClock/>}>TimeSheet</Menu.Item>
             </SubMenu>
-            <SubMenu   key="sub4" icon={<GiFarmTractor />} title="Activities">
+            <SubMenu   key="sub4" icon={<GiFarmTractor />} title="Farm Assets">
               <Menu.Item key="19" icon={<GiField />}><Link to="/Farms"/>Farms</Menu.Item>
               <Menu.Item key="20" icon={<BsFillCloudLightningRainFill />}>Rain</Menu.Item>
               <Menu.Item key="21" icon={<GiGrainBundle />}><Link to="/Cultivars"/>Cultivars</Menu.Item>
