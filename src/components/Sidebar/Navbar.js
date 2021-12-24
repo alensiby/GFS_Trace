@@ -64,6 +64,7 @@ export default function Navbar(props) {
             <Trans i18nKey="navbar.activity_reports">Activity Reports</Trans>
           </Menu.Item>
           <Menu.Item key="5" icon={<ImDroplet />}>
+          <Link to="/Spraylogs" />
             <Trans i18nKey="navbar.spray_logs">Spray Logs</Trans>
           </Menu.Item>
           <Menu.Item key="6" icon={<GiGroundSprout />}>
@@ -106,6 +107,7 @@ export default function Navbar(props) {
             </Trans>
           </Menu.Item>
           <Menu.Item key="13" icon={<GiGrain />}>
+        {/*  <Link to="/Grain" />*/}
           <Trans i18nKey="navbar.grain">
             Grain
             </Trans>

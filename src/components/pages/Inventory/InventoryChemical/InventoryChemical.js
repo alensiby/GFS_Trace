@@ -15,7 +15,7 @@ export default function InventoryChemical() {
         <h1 style={{"color": "black"}}>Chemical Inventory </h1><span>&nbsp;&nbsp;</span>
   
     </div>
-     {/*------------------------------------Farm Tables Paddock, silos, fuel tanks----------------------*/}
+  
     <InventoryChemicalTable/>
 </div>
 
