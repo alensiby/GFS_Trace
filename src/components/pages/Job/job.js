@@ -66,8 +66,8 @@ export default function Job() {
     { title: "Category", field: "category" ,
     lookup: { '0': 'None', '1': 'Equipment', '2': 'Paddock', '3': 'Fuel Tank', '4': 'Silo', '5': 'Livestock'},},
     { title: "Asset", field: "asset" },
-    { title: "Due Date", field: "duedate", type:"date" },
-    { title: "Last Update", field: "lastupdate", type:"date" },
+    { title: "Due Date", field: "duedate", type:"date", filtering: false },
+    { title: "Last Update", field: "lastupdate", type:"date", filtering: false },
     
   ];
  
