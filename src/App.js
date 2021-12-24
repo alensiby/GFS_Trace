@@ -13,7 +13,7 @@ import Fertiliser from "./components/pages/FarmAssets/Fertiliser/FertiliserTable
 import Livestock from "./components/pages/FarmAssets/Livestock/LiveStock";
 import WaterLicence from "./components/pages/FarmAssets/WaterLicence/WaterLicence";
 import Nozzles from "./components/pages/FarmAssets/Nozzles/Nozzles";
-import InventoryChemical from "./components/pages/Inventory/InventoryChemical/InventoryChemical";
+//import InventoryChemical from "./components/pages/Inventory/InventoryChemical/InventoryChemical";
 
 class App extends Component {
   render() {
@@ -31,7 +31,7 @@ class App extends Component {
             <Route path="/Nozzles" element={<Nozzles/>}/>
             <Route path="/Livestock" element={<Livestock/>}/>
             <Route path="/WaterLicence" element={<WaterLicence/>}/>
-            <Route path="/InventoryChemical" element={<InventoryChemical/>}/>
+          
            
           </Routes>
           
