@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
+import { useTranslation, I18nextProvider } from 'react-i18next';
 import Structure from "./components/Layout/Structure";
 import Dashboard from "./components/pages/Dashboard/Dashboard";
 import Job from "./components/pages/Job/job";
@@ -17,9 +17,11 @@ import InventoryChemical from "./components/pages/Inventory/InventoryChemical/In
 //import Grain from "./components/pages/Inventory/Grain/Grain";
 import Spraylogs from "./components/pages/Activities/Spraylogs/Spraylogs";
 
-class App extends Component {
-  render() {
+function App (){
+  const {i18n}=useTranslation();
+  
     return (
+      <I18nextProvider i18n={i18n}>
       <Router >
         <Structure>
           <Routes>
@@ -42,8 +44,9 @@ class App extends Component {
           </Structure>       
          
       </Router>
+      </I18nextProvider>
     );
-  }
+  
 }
 
 export default App;

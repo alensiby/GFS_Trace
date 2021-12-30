@@ -1,4 +1,43 @@
 {
+  "header": {
+    "logout": " Logout"
+  },
+  "jobs": {
+    "status": "Status",
+    "raised": "Raised",
+    "raisedandassigned": "Raised And Assigned",
+    "inprogress": "In Progress",
+    "onhold": "On Hold",
+    "completed": "Completed",
+    "priority": "Priority",
+    "low": "Low",
+    "normal": "Normal",
+    "high": "High",
+    "safety": "Safety",
+    "description": "Description",
+    "category": "Category",
+    "asset": "Asset",
+    "duedate": "Due Date",
+    "lastdate": "Last Date",
+    "heading": "Jobs",
+    "showcompleted": "Show Completed"
+  },
+  "materialtable": {
+    "searchtooltip": "Search",
+    "searchplaceholder": "Search",
+    "headeractions": "Actions",
+    "bodyaddtooltip": "Add",
+    "bodydeletetooltip": "Delete",
+    "edittooltip": "Edit",
+    "emptydatasourcemessage": "No recorde to diplay",
+    "deletetext": "Are you sure u want to delete?",
+    "editrowcanceltip": "Cancel",
+    "editrowsavetooltip": "Save",
+    "feltertooltip": "Filter",
+    "previoustooltip": "Previous Page",
+    "nexttooltip": "Next Page",
+    "labelrowselect": "rows"
+  },
   "navbar": {
     "dashboard": "Dashboard",
     "custom_reports": "Custom Reports",

@@ -3,6 +3,7 @@ import MaterialTable from "material-table";
 import { Checkbox } from "semantic-ui-react";
 import "./job.css";
 import '../Pages.css';
+import {useTranslation,Trans} from 'react-i18next';
 import CreateIcon from '@mui/icons-material/Create';
 import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -13,19 +14,20 @@ import {
 } from "../../../Data/JobData";
 
 export default function Job() {
+  const { t } = useTranslation();
   const [selected, toggleselected] = useState(false);
   
   const columns = [
     {
-      title: "Status",
+      title: t('jobs.status',"Status"),
       field: "status",
      
      
-      lookup: { '0': 'Raised',
-      '1': 'Raised and Assigned',
-      '2': 'In Progress',
-      '3': 'On Hold',
-      '4': 'Completed',
+      lookup: { '0': <Trans i18nKey="jobs.raised">Raised</Trans>,
+      '1': t('jobs.raisedandassigned','Raised And Assigned'),
+      '2': t('jobs.inprogress','In Progress'),
+      '3': t('jobs.onhold','On Hold'),
+      '4': t('jobs.completed','Completed'),
       } ,
       render: rowData => {
         switch (rowData.status) {
@@ -46,8 +48,11 @@ export default function Job() {
 
   
 },
-    { title: "Priority", field: "priority" ,
-    lookup: { '0': 'Low', '1': 'Normal', '2': 'High', '3': 'Safety'},
+    { title: t('jobs.priority','Priority'), field: "priority" ,
+    lookup: { '0': t('jobs.low','Low'), 
+    '1': t('jobs.normal','Normal'), 
+    '2': t('jobs.high','High'), 
+    '3': t('jobs.safety','Safety')},
     render: rowData => {
       switch (rowData.priority) {
         case '0':
@@ -62,12 +67,12 @@ export default function Job() {
       return <></>
     }}
   },
-    { title: "Description", field: "description" },
-    { title: "Category", field: "category" ,
+    { title: t('jobs.description','Description'), field: "description" },
+    { title: t('jobs.category','Category'), field: "category" ,
     lookup: { '0': 'None', '1': 'Equipment', '2': 'Paddock', '3': 'Fuel Tank', '4': 'Silo', '5': 'Livestock'},},
-    { title: "Asset", field: "asset" },
-    { title: "Due Date", field: "duedate", type:"date", filtering: false },
-    { title: "Last Update", field: "lastupdate", type:"date", filtering: false },
+    { title: t('jobs.asset','Asset'), field: "asset" },
+    { title: t('jobs.duedate','Due Date'), field: "duedate", type:"date", filtering: false },
+    { title: t('jobs.lastdate','Last Date'), field: "lastupdate", type:"date", filtering: false },
     
   ];
  
@@ -76,7 +81,7 @@ export default function Job() {
     
     <div className= "subheader">
              
-        <h1 style={{"color": "black", "margin-bottom":"0px"}}>Jobs </h1><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <h1 style={{"color": "black", "margin-bottom":"0px"}}><Trans i18nKey="jobs.heading">Jobs</Trans> </h1><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
       
         <div className="toggle-switch">
           <Checkbox
@@ -85,7 +90,7 @@ export default function Job() {
             checked={selected}
           />
         </div>
-        <div className="completed">Show Completed</div>
+        <div className="completed"><Trans i18nKey="jobs.showcompleted">Show Completed</Trans></div>
       </div>
 
       <div className="equipment-table">
@@ -96,6 +101,36 @@ export default function Job() {
             onRowAdd:(newRow)=> new Promise((resolve,reject)=>{}),
             onRowUpdate:(newRow,oldRow)=> new Promise(()=>{}),
             onRowDelete:(selectedRow)=> new Promise(()=>{})
+          }}
+          localization={{
+            toolbar:{
+              searchTooltip:t('materialtable.searchtooltip','Search'),
+              searchPlaceholder:t('materialtable.searchplaceholder','Search')
+            },
+            header:{
+              actions:t('materialtable.headeractions','Actions')
+
+            },
+            body:{
+              addTooltip:t('materialtable.bodyaddtooltip','Add'),
+              deleteTooltip:t('materialtable.bodydeletetooltip','Delete'),
+              editTooltip:t('materialtable.edittooltip','Edit'),
+              emptyDataSourceMessage:t('materialtable.emptydatasourcemessage','No recorde to diplay'),
+              editRow:{
+                deleteText:t('materialtable.deletetext','Are you sure u want to delete?'),
+                cancelTooltip:t('materialtable.editrowcanceltip','Cancel'),
+                saveTooltip:t('materialtable.editrowsavetooltip','Save')
+              },
+              filterRow:{
+                filterTooltip:t('materialtable.feltertooltip','Filter')
+              }
+            },
+            pagination:{
+              previousTooltip:t('materialtable.previoustooltip','Previous Page'),
+              nextTooltip:t('materialtable.nexttooltip','Next Page'),
+              labelRowsSelect:t('materialtable.labelrowselect','rows')
+              
+            }
           }}
           options={{
             showTitle: false,

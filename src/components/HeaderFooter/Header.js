@@ -1,6 +1,7 @@
 import React from "react";
 import farmsimple from "../../images/logo.jpg";
 import "./header.css";
+import {Trans} from 'react-i18next';
 
 export default function Header() {
   return (
@@ -15,7 +16,8 @@ export default function Header() {
         {" "}
         Owner
       </span>
-      <button className="logout">LOGOUT</button>
+      <button className="logout"><Trans i18nKey="header.logout"> Logout
+        </Trans></button>
     </div>
   );
 }
