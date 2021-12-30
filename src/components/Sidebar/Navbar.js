@@ -68,6 +68,7 @@ export default function Navbar(props) {
             <Trans i18nKey="navbar.spray_logs">Spray Logs</Trans>
           </Menu.Item>
           <Menu.Item key="6" icon={<GiGroundSprout />}>
+          <Link to="/Planting" />
           <Trans i18nKey="navbar.planting">
             Planting
             </Trans>
