@@ -11,6 +11,9 @@
     z-index: 1000;
     
   }
+  .ant-layout-sider-trigger {
+    height: 56px;
+  }
   
   .site-layout .site-layout-background {
     background: #fff;

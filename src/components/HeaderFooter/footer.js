@@ -1,38 +1,58 @@
 
-import React from 'react';
-import WebIcon from 'mdi-react/WebIcon';
+import {React,useState} from 'react';
 import YoutubeIcon from 'mdi-react/YoutubeIcon';
 import "./footer.css";
+import { useTranslation } from 'react-i18next';
+
 import FacebookIcon from 'mdi-react/FacebookIcon';
 import TwitterIcon from 'mdi-react/TwitterIcon';
+import { Dropdown } from 'semantic-ui-react';
 //import EyeIcon from 'mdi-react/EyeIcon';
 
+const languageOptions =[
+  {key:'English',text:'English',value:'en'},
+  {key:'Malayalam',text:'മലയാളം',value:'ml'},
+  {key:'Tamil',text:'தமிழ்',value:'tm'}
+]
+
 export default function Footer() {
-  return(
+  const [language, setlanguage] = useState("en")
+  const {i18n}=useTranslation();
+  const handleDropdown=(event,lang)=>{
+    setlanguage(lang.value)
+    i18n.changeLanguage(lang.value)
    
-  <footer className="v-footer" data-booted="true">
-   {  /*  <span small="" style={{"margin-left": "50px"}}>Icons by{' '} 
-  <a target="_blank" href="https://icons8.com/">Icons8</a>
-      </span>*/}
-  
-        <div className="spacer"></div>
+  }
+  return(
        
-      <div style={{"margin-right": "20px"}}>
-    <a href="" target="_blank" className="mr-1 v-btn-footer v-btn--icon v-btn--round theme--light v-size--small">
-      <span className="v-btn__content"><WebIcon size={24} /></span></a>
+       
+      <div className='footer-main'>
+        <div><Dropdown
+        upward
+        selection
+        onChange={handleDropdown}
+        button
+        className="icon"
+        labeled
+        icon="world"
+        value={language}
+        scrolling
+        options={languageOptions}
+        placeholder="Language"
+        /></div>
+    
       
-     <a href="" target="_blank" className="mr-1 v-btn-footer v-btn--icon v-btn--round theme--light v-size--small"><span className="v-btn__content"><FacebookIcon size={24} /></span></a>
+     <a href="#" className="margin-one footer-button footer-button-icon footer-button-round button-color button-size-small"><span className="footer-icon"><FacebookIcon size={24} /></span></a>
       
-      <a href="" target="_blank" className="mr-1 v-btn-footer v-btn--icon v-btn--round theme--light v-size--small"><span className="v-btn__content"><TwitterIcon size={24} /></span></a>
+      <a href="#" className="margin-one footer-button footer-button-icon footer-button-round button-color button-size-small"><span className="footer-icon"><TwitterIcon size={24} /></span></a>
       
-      <a href="" target="_blank" className="mr-1 v-btn-footer v-btn--icon v-btn--round theme--light v-size--small"><span className="v-btn__content"><YoutubeIcon size={24} /></span></a>
+      <a href="#" className="margin-one footer-button footer-button-icon footer-button-round button-color button-size-small"><span className="footer-icon"><YoutubeIcon size={24} /></span></a>
       
       <span style={{"margin-left": "10px", "align-items": "center", "color": "rgb(79, 79, 79)", "top": "0"}}> © 2021 
     
       </span>
     </div>
-     
-   </footer>
+  
      
       );
 }

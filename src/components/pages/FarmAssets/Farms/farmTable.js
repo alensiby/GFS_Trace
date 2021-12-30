@@ -1,17 +1,16 @@
-import React, {useState} from 'react'
-import { Segment } from 'semantic-ui-react';
+import React, {useState} from 'react';
 import {Menu} from 'semantic-ui-react';
 import TableDetails from './tableDetails'
 
 
 export default function FarmTable()  {
-    const [state, setState] = React.useState("PADDOCK"); 
+    const [state, setState] = useState("PADDOCK"); 
 
       return (
         <div>
           <Menu pointing>
             <Menu.Item
-              name='PADDOCK'
+              name='PADDOCKS'
               active={state === 'PADDOCK'}
              color="green"
              onClick={() => setState("PADDOCK")}
@@ -26,6 +25,12 @@ export default function FarmTable()  {
               name='SILOS'
               active={state === 'SILOS'}
               onClick={() => setState("SILOS")}
+              color="green"
+            />
+            <Menu.Item
+              name='WATER STORAGES'
+              active={state === 'WATER STORAGES'}
+              onClick={() => setState("WATER STORAGES")}
               color="green"
             />
           
