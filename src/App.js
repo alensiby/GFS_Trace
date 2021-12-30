@@ -16,6 +16,13 @@ import Nozzles from "./components/pages/FarmAssets/Nozzles/Nozzles";
 import InventoryChemical from "./components/pages/Inventory/InventoryChemical/InventoryChemical";
 //import Grain from "./components/pages/Inventory/Grain/Grain";
 import Spraylogs from "./components/pages/Activities/Spraylogs/Spraylogs";
+import Planting from "./components/pages/Activities/Planting/Planting";
+import Spreading from "./components/pages/Activities/Spreading/Spreading";
+import Harvest from "./components/pages/Activities/Harvest/Harvest";
+import Grazing from "./components/pages/Activities/Grazing/Grazing";
+import Irrigation from "./components/pages/Activities/Irrigation/Irrigation";
+import Maintenance from "./components/pages/Activities/Maintenance/Maintenance";
+import VetTreatment from "./components/pages/Activities/VetTreatment/VetTreatment";
 
 function App (){
   const {i18n}=useTranslation();
@@ -37,7 +44,14 @@ function App (){
             <Route path="/WaterLicence" element={<WaterLicence/>}/>
             <Route path="/InventoryChemical" element={<InventoryChemical/>}/>
             <Route path="/Spraylogs" element={<Spraylogs/>}/>
-           {/*<Route path="/Grain" element={<Grain/>}/>*/}
+            <Route path="/Planting" element={<Planting/>}/>
+            <Route path="/Spreading" element={<Spreading/>}/>
+            <Route path="/Harvest" element={<Harvest/>}/>
+            <Route path="/Grazing" element={<Grazing/>}/>
+            <Route path="/Irrigation" element={<Irrigation/>}/>
+            <Route path="/Maintenance" element={<Maintenance/>}/>
+            <Route path="/VetTreatment" element={<VetTreatment/>}/>
+          {/*<Route path="/Grain" element={<Grain/>}/>*/}
            
           </Routes>
           

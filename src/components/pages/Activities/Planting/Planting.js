@@ -6,11 +6,11 @@ import CreateIcon from '@mui/icons-material/Create';
 
 import {Icon} from 'semantic-ui-react';
 import {
-    spraylogsData_withoutcomplete,
-    spraylogsData_withcomplete,
-} from "../../../../Data/SpraylogsData";
+    plantingData_withoutcomplete,
+    plantingData_withcomplete,
+} from "../../../../Data/PlantingData";
 
-export default function Spraylogs() {
+export default function Planting() {
   const [selected, toggleselected] = useState(false);
   
   const columns = [
@@ -44,7 +44,6 @@ export default function Spraylogs() {
 
   
 },
-    
 { title: "Contract", field: "contract",  
 lookup: { 'no': 'No',
 'yes': 'Yes'}
@@ -54,7 +53,7 @@ lookup: { 'no': 'No',
     'yes': 'Yes'}
    },
     { title: "Description", field: "description" },
-    { title: "Due Date", field: "duedate", type:"date", filtering: false },
+    { title: "Scheduled Date", field: "scheduleddate", type:"date", filtering: false },
     { title: "Started", field: "started",lookup: { 'no': 'No',
     'yes': 'Yes'} },
     { title: "Completed", field: "completed", lookup: { 'no': 'No',
@@ -62,12 +61,13 @@ lookup: { 'no': 'No',
     
   ];
  
+ 
   return (
     <div  className= "table-size">
     
     <div className= "subheader">
              
-        <h1 style={{"color": "black", "margin-bottom":"0px"}}>Spraylogs </h1><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <h1 style={{"color": "black", "margin-bottom":"0px"}}>Planting </h1><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
       
         <div className="toggle-switch">
           <Checkbox
@@ -82,9 +82,9 @@ lookup: { 'no': 'No',
       <div className="equipment-table">
         <MaterialTable
           columns={columns}
-          data={selected ? spraylogsData_withcomplete : spraylogsData_withoutcomplete}
+          data={selected ? plantingData_withcomplete : plantingData_withoutcomplete}
           editable={{
-            
+           
             onRowUpdate:(newRow,oldRow)=> new Promise(()=>{}),
             onRowDelete:(selectedRow)=> new Promise(()=>{})
           }}
@@ -99,7 +99,7 @@ lookup: { 'no': 'No',
           }}
           icons={{
           
-            
+           
             Edit: () => <CreateIcon color="action" />,
            
           }}

@@ -6,11 +6,11 @@ import CreateIcon from '@mui/icons-material/Create';
 
 import {Icon} from 'semantic-ui-react';
 import {
-    spraylogsData_withoutcomplete,
-    spraylogsData_withcomplete,
-} from "../../../../Data/SpraylogsData";
+    vettreatmentData_withoutcomplete,
+    vettreatmentData_withcomplete,
+} from "../../../../Data/VetTreatmentData";
 
-export default function Spraylogs() {
+export default function VetTreatment() {
   const [selected, toggleselected] = useState(false);
   
   const columns = [
@@ -44,17 +44,31 @@ export default function Spraylogs() {
 
   
 },
-    
-{ title: "Contract", field: "contract",  
-lookup: { 'no': 'No',
-'yes': 'Yes'}
-},
+
     
     { title: "Approved", field: "approved",lookup: { 'no': 'No',
     'yes': 'Yes'}
    },
     { title: "Description", field: "description" },
-    { title: "Due Date", field: "duedate", type:"date", filtering: false },
+        
+{ title: "Livestock", field: "livestock",  
+
+lookup:{
+    'cattle': "Cattle" ,
+    'bulls': "Bulls" ,
+    'sheep': "Sheep" ,
+    'horses': "Horses" ,
+    'chickens': "Chickens" ,
+    'pigs': 'Pigs' ,
+    'deer': 'Deer' ,
+    'goats': 'Goats' ,
+    'llamas': 'Llamas' ,
+    'Bees': 'Bees' ,
+}
+},
+{ title: "Product", field: "product" },
+
+    { title: "Scheduled Date", field: "scheduleddate", type:"date", filtering: false },
     { title: "Started", field: "started",lookup: { 'no': 'No',
     'yes': 'Yes'} },
     { title: "Completed", field: "completed", lookup: { 'no': 'No',
@@ -67,7 +81,7 @@ lookup: { 'no': 'No',
     
     <div className= "subheader">
              
-        <h1 style={{"color": "black", "margin-bottom":"0px"}}>Spraylogs </h1><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <h1 style={{"color": "black", "margin-bottom":"0px"}}>Vet Treatments </h1><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
       
         <div className="toggle-switch">
           <Checkbox
@@ -82,7 +96,7 @@ lookup: { 'no': 'No',
       <div className="equipment-table">
         <MaterialTable
           columns={columns}
-          data={selected ? spraylogsData_withcomplete : spraylogsData_withoutcomplete}
+          data={selected ? vettreatmentData_withcomplete : vettreatmentData_withoutcomplete}
           editable={{
             
             onRowUpdate:(newRow,oldRow)=> new Promise(()=>{}),
