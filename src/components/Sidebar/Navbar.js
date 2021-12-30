@@ -91,6 +91,7 @@ export default function Navbar(props) {
             </Trans>
           </Menu.Item>
           <Menu.Item key="10" icon={<GiPlantWatering />}>
+          <Link to="/Irrigation" />
           <Trans i18nKey="navbar.irrigation">
             Irrigation
             </Trans>
