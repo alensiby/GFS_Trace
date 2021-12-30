@@ -20,6 +20,7 @@ import { ImDroplet } from "react-icons/im";
 import "./sidebar.css";
 import { SiHappycow } from "react-icons/si";
 import { MdVerified } from "react-icons/md";
+import { GiMedicalPackAlt } from "react-icons/gi";
 import { BsFillCloudLightningRainFill } from "react-icons/bs";
 import {
   GiFarmTractor,
@@ -86,8 +87,9 @@ export default function Navbar(props) {
             </Trans>
           </Menu.Item>
           <Menu.Item key="9" icon={<GiAutoRepair />}>
-          <Trans i18nKey="navbar.maintainance">
-            Maintainance
+          <Link to="/Maintenance" />
+          <Trans i18nKey="navbar.Maintenance">
+            Maintenance
             </Trans>
           </Menu.Item>
           <Menu.Item key="10" icon={<GiPlantWatering />}>
@@ -102,38 +104,44 @@ export default function Navbar(props) {
             Grazing
             </Trans>
           </Menu.Item>
+          <Menu.Item key="12" icon={<GiMedicalPackAlt />}>
+          <Link to="/VetTreatment" />
+          <Trans i18nKey="navbar.vettreatment">
+            Vet Treatments
+            </Trans>
+          </Menu.Item>
         </SubMenu>
         <SubMenu key="sub2" icon={<FaWarehouse />} title={<Trans i18nKey="navbar.inventory">
             Inventory
             </Trans>}>
-          <Menu.Item key="12" icon={<VscOpenPreview />}>
+          <Menu.Item key="13" icon={<VscOpenPreview />}>
           <Trans i18nKey="navbar.inventory_reports">
             Inventory Reports
             </Trans>
           </Menu.Item>
-          <Menu.Item key="13" icon={<GiGrain />}>
+          <Menu.Item key="14" icon={<GiGrain />}>
         {/*  <Link to="/Grain" />*/}
           <Trans i18nKey="navbar.grain">
             Grain
             </Trans>
           </Menu.Item>
-          <Menu.Item key="14" icon={<GiChemicalDrop />}>
+          <Menu.Item key="15" icon={<GiChemicalDrop />}>
             <Link to="/InventoryChemical" />
             <Trans i18nKey="navbar.chemical">
             Chemical
             </Trans>
           </Menu.Item>
-          <Menu.Item key="15" icon={<GiFertilizerBag />}>
+          <Menu.Item key="16" icon={<GiFertilizerBag />}>
           <Trans i18nKey="navbar.fertilizer">
             Fertilizer
             </Trans>
           </Menu.Item>
-          <Menu.Item key="16" icon={<GiFuelTank />}>
+          <Menu.Item key="17" icon={<GiFuelTank />}>
           <Trans i18nKey="navbar.fuel">
             Fuel
             </Trans>
           </Menu.Item>
-          <Menu.Item key="17" icon={<FaHandHoldingWater />}>
+          <Menu.Item key="18" icon={<FaHandHoldingWater />}>
           <Trans i18nKey="navbar.water">
             Water
             </Trans>
@@ -142,76 +150,76 @@ export default function Navbar(props) {
         <SubMenu key="sub3" icon={<BsPeopleFill />} title={<Trans i18nKey="navbar.personal">
             Personal
             </Trans>}>
-          <Menu.Item key="18" icon={<FaUserClock />}>
+          <Menu.Item key="19" icon={<FaUserClock />}>
           <Trans i18nKey="navbar.timesheet">
             Timesheet
             </Trans>
           </Menu.Item>
         </SubMenu>
-        <SubMenu key="sub4" icon={<GiFarmTractor />} title={<Trans i18nKey="navbar.farm_assets">
-            Farms Assets
+        <SubMenu key="sub4" icon={<GiFarmTractor />} title={<Trans i18nKey="navbar.farmassets">
+            Farm Assets
             </Trans>}>
-          <Menu.Item key="19" icon={<GiField />}>
+          <Menu.Item key="20" icon={<GiField />}>
             <Link to="/Farms" />
             <Trans i18nKey="navbar.farms">
             Farms
             </Trans>
           </Menu.Item>
-          <Menu.Item key="20" icon={<BsFillCloudLightningRainFill />}>
+          <Menu.Item key="21" icon={<BsFillCloudLightningRainFill />}>
           <Trans i18nKey="navbar.rain">
             Rain
             </Trans>
           </Menu.Item>
-          <Menu.Item key="21" icon={<GiGrainBundle />}>
+          <Menu.Item key="22" icon={<GiGrainBundle />}>
             <Link to="/Cultivars" />
             <Trans i18nKey="navbar.cultivars">
            Cultivars
             </Trans>
           </Menu.Item>
-          <Menu.Item key="22" icon={<GiGoat />}>
+          <Menu.Item key="23" icon={<GiGoat />}>
             <Link to="/Livestock" />
             <Trans i18nKey="navbar.livestock">
             Livestock
             </Trans>
           </Menu.Item>
-          <Menu.Item key="23" icon={<FaTools />}>
+          <Menu.Item key="24" icon={<FaTools />}>
             <Link to="/Equipments" />
             <Trans i18nKey="navbar.equipments">
             Equipments
             </Trans>
           </Menu.Item>
-          <Menu.Item key="24" icon={<GiChemicalDrop />}>
+          <Menu.Item key="25" icon={<GiChemicalDrop />}>
             <Link to="/Chemicals" />
             <Trans i18nKey="navbar.chemicals">
             Chemicals
             </Trans>
           </Menu.Item>
-          <Menu.Item key="25" icon={<GiFertilizerBag />}>
+          <Menu.Item key="26" icon={<GiFertilizerBag />}>
             <Link to="/Fertiliser" />
             <Trans i18nKey="navbar.fertilizers">
             Fertilizers
             </Trans>
           </Menu.Item>
-          <Menu.Item key="26" icon={<FaUsers />}>
+          <Menu.Item key="27" icon={<FaUsers />}>
             <Link to="/Users" />
             <Trans i18nKey="navbar.users">
             Users
             </Trans>
           </Menu.Item>
-          <Menu.Item key="27" icon={<FaSprayCan />}>
+          <Menu.Item key="28" icon={<FaSprayCan />}>
             <Link to="/Nozzles" />
             <Trans i18nKey="navbar.nozzles">
             Nozzles
             </Trans>
           </Menu.Item>
-          <Menu.Item key="28" icon={<MdVerified />}>
+          <Menu.Item key="29" icon={<MdVerified />}>
             <Link to="/Waterlicence" />
             <Trans i18nKey="navbar.water_licences">
             Water Licences
             </Trans>
           </Menu.Item>
         </SubMenu>
-        <Menu.Item key="29" icon={<FaCalendarAlt />}>
+        <Menu.Item key="30" icon={<FaCalendarAlt />}>
         <Trans i18nKey="navbar.calender">
             Calendar
             </Trans>

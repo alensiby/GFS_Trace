@@ -21,6 +21,8 @@ import Spreading from "./components/pages/Activities/Spreading/Spreading";
 import Harvest from "./components/pages/Activities/Harvest/Harvest";
 import Grazing from "./components/pages/Activities/Grazing/Grazing";
 import Irrigation from "./components/pages/Activities/Irrigation/Irrigation";
+import Maintenance from "./components/pages/Activities/Maintenance/Maintenance";
+import VetTreatment from "./components/pages/Activities/VetTreatment/VetTreatment";
 
 class App extends Component {
   render() {
@@ -45,6 +47,8 @@ class App extends Component {
             <Route path="/Harvest" element={<Harvest/>}/>
             <Route path="/Grazing" element={<Grazing/>}/>
             <Route path="/Irrigation" element={<Irrigation/>}/>
+            <Route path="/Maintenance" element={<Maintenance/>}/>
+            <Route path="/VetTreatment" element={<VetTreatment/>}/>
           {/*<Route path="/Grain" element={<Grain/>}/>*/}
            
           </Routes>
