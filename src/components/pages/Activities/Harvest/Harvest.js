@@ -6,11 +6,11 @@ import CreateIcon from '@mui/icons-material/Create';
 
 import {Icon} from 'semantic-ui-react';
 import {
-    spreadingData_withoutcomplete,
-    spreadingData_withcomplete,
-} from "../../../../Data/SpreadingData";
+    harvestData_withoutcomplete,
+    harvestData_withcomplete,
+} from "../../../../Data/HarvestData";
 
-export default function Spreading() {
+export default function Harvest() {
   const [selected, toggleselected] = useState(false);
   
   const columns = [
@@ -67,7 +67,7 @@ lookup: { 'no': 'No',
     
     <div className= "subheader">
              
-        <h1 style={{"color": "black", "margin-bottom":"0px"}}>Spreading </h1><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <h1 style={{"color": "black", "margin-bottom":"0px"}}>Harvest </h1><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
       
         <div className="toggle-switch">
           <Checkbox
@@ -82,7 +82,7 @@ lookup: { 'no': 'No',
       <div className="equipment-table">
         <MaterialTable
           columns={columns}
-          data={selected ? spreadingData_withcomplete : spreadingData_withoutcomplete}
+          data={selected ? harvestData_withcomplete : harvestData_withoutcomplete}
           editable={{
             
             onRowUpdate:(newRow,oldRow)=> new Promise(()=>{}),

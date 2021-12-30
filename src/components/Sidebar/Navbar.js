@@ -74,11 +74,13 @@ export default function Navbar(props) {
             </Trans>
           </Menu.Item>
           <Menu.Item key="7" icon={<GiWheat />}>
+          <Link to="/Spreading" />
           <Trans i18nKey="navbar.spreading">
             Spreading
             </Trans>
           </Menu.Item>
           <Menu.Item key="8" icon={<GiFruitTree />}>
+          <Link to="/Harvest" />
           <Trans i18nKey="navbar.harvest">
            Harvest
             </Trans>

@@ -17,6 +17,8 @@ import InventoryChemical from "./components/pages/Inventory/InventoryChemical/In
 //import Grain from "./components/pages/Inventory/Grain/Grain";
 import Spraylogs from "./components/pages/Activities/Spraylogs/Spraylogs";
 import Planting from "./components/pages/Activities/Planting/Planting";
+import Spreading from "./components/pages/Activities/Spreading/Spreading";
+import Harvest from "./components/pages/Activities/Harvest/Harvest";
 
 class App extends Component {
   render() {
@@ -37,6 +39,8 @@ class App extends Component {
             <Route path="/InventoryChemical" element={<InventoryChemical/>}/>
             <Route path="/Spraylogs" element={<Spraylogs/>}/>
             <Route path="/Planting" element={<Planting/>}/>
+            <Route path="/Spreading" element={<Spreading/>}/>
+            <Route path="/Harvest" element={<Harvest/>}/>
           {/*<Route path="/Grain" element={<Grain/>}/>*/}
            
           </Routes>
