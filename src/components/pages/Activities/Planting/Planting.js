@@ -53,7 +53,7 @@ lookup: { 'no': 'No',
     'yes': 'Yes'}
    },
     { title: "Description", field: "description" },
-    { title: "Due Date", field: "duedate", type:"date", filtering: false },
+    { title: "Scheduled Date", field: "scheduleddate", type:"date", filtering: false },
     { title: "Started", field: "started",lookup: { 'no': 'No',
     'yes': 'Yes'} },
     { title: "Completed", field: "completed", lookup: { 'no': 'No',

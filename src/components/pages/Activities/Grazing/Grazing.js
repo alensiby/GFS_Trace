@@ -6,11 +6,11 @@ import CreateIcon from '@mui/icons-material/Create';
 
 import {Icon} from 'semantic-ui-react';
 import {
-    harvestData_withoutcomplete,
-    harvestData_withcomplete,
-} from "../../../../Data/HarvestData";
+    grazingData_withoutcomplete,
+    grazingData_withcomplete,
+} from "../../../../Data/GrazingData";
 
-export default function Harvest() {
+export default function Grazing() {
   const [selected, toggleselected] = useState(false);
   
   const columns = [
@@ -44,16 +44,28 @@ export default function Harvest() {
 
   
 },
-    
-{ title: "Contract", field: "contract",  
-lookup: { 'no': 'No',
-'yes': 'Yes'}
-},
+
     
     { title: "Approved", field: "approved",lookup: { 'no': 'No',
     'yes': 'Yes'}
    },
     { title: "Description", field: "description" },
+        
+{ title: "Livestock", field: "livestock",  
+
+lookup:{
+    'cattle': "Cattle" ,
+    'bulls': "Bulls" ,
+    'sheep': "Sheep" ,
+    'horses': "Horses" ,
+    'chickens': "Chickens" ,
+    'pigs': 'Pigs' ,
+    'deer': 'Deer' ,
+    'goats': 'Goats' ,
+    'llamas': 'Llamas' ,
+    'Bees': 'Bees' ,
+}
+},
     { title: "Scheduled Date", field: "scheduleddate", type:"date", filtering: false },
     { title: "Started", field: "started",lookup: { 'no': 'No',
     'yes': 'Yes'} },
@@ -67,7 +79,7 @@ lookup: { 'no': 'No',
     
     <div className= "subheader">
              
-        <h1 style={{"color": "black", "margin-bottom":"0px"}}>Harvest </h1><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <h1 style={{"color": "black", "margin-bottom":"0px"}}>Grazing </h1><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
       
         <div className="toggle-switch">
           <Checkbox
@@ -82,7 +94,7 @@ lookup: { 'no': 'No',
       <div className="equipment-table">
         <MaterialTable
           columns={columns}
-          data={selected ? harvestData_withcomplete : harvestData_withoutcomplete}
+          data={selected ? grazingData_withcomplete : grazingData_withoutcomplete}
           editable={{
             
             onRowUpdate:(newRow,oldRow)=> new Promise(()=>{}),

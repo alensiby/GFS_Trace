@@ -96,6 +96,7 @@ export default function Navbar(props) {
             </Trans>
           </Menu.Item>
           <Menu.Item key="11" icon={<SiHappycow />}>
+          <Link to="/Grazing" />
           <Trans i18nKey="navbar.grazing">
             Grazing
             </Trans>

@@ -19,6 +19,7 @@ import Spraylogs from "./components/pages/Activities/Spraylogs/Spraylogs";
 import Planting from "./components/pages/Activities/Planting/Planting";
 import Spreading from "./components/pages/Activities/Spreading/Spreading";
 import Harvest from "./components/pages/Activities/Harvest/Harvest";
+import Grazing from "./components/pages/Activities/Grazing/Grazing";
 
 class App extends Component {
   render() {
@@ -41,6 +42,7 @@ class App extends Component {
             <Route path="/Planting" element={<Planting/>}/>
             <Route path="/Spreading" element={<Spreading/>}/>
             <Route path="/Harvest" element={<Harvest/>}/>
+            <Route path="/Grazing" element={<Grazing/>}/>
           {/*<Route path="/Grain" element={<Grain/>}/>*/}
            
           </Routes>
