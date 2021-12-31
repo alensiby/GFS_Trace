@@ -18,7 +18,7 @@
     "category": "വിഭാഗം",
     "asset": "ആസ്തി",
     "duedate": "അവസാന തീയതി",
-    "lastdate": "അവസാന തീയതി",
+    "lastupdate": "അവസാന പരിഷ്കാരം",
     "heading": "ജോലികൾ",
     "showcompleted": "പ്രദർശനം പൂർത്തിയായി"
   },
@@ -53,6 +53,7 @@
     "maintainance": "പരിപാലനം",
     "irrigation": "ജലസേചനം",
     "grazing": "മേച്ചിൽ",
+    "vettreatment": "വെറ്റ് ചികിത്സകൾ",
     "inventory": "ഇൻവെന്ററി",
     "inventory_reports": " ഇൻവെന്ററി റിപ്പോർട്ടുകൾ",
     "grain": "ധാന്യം",

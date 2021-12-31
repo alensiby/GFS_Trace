@@ -88,7 +88,7 @@ export default function Navbar(props) {
           </Menu.Item>
           <Menu.Item key="9" icon={<GiAutoRepair />}>
           <Link to="/Maintenance" />
-          <Trans i18nKey="navbar.Maintenance">
+          <Trans i18nKey="navbar.maintainance">
             Maintenance
             </Trans>
           </Menu.Item>
