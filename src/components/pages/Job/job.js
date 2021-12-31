@@ -103,7 +103,7 @@ export default function Job() {
           />
         </div>
 
-        <div className="completed"><Trans i18nKey="jobs.showcompleted">Show Completed</Trans></div>
+        <div className="completed"><Trans i18nKey="general.showcompleted">Show Completed</Trans></div>
 
       </div>
 

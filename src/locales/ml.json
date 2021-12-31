@@ -19,9 +19,50 @@
     "asset": "ആസ്തി",
     "duedate": "അവസാന തീയതി",
     "lastupdate": "അവസാന പരിഷ്കാരം",
-    "heading": "ജോലികൾ",
+    "heading": "ജോലികൾ"
+  },
+  "activities": {
+    "status": "നില",
+    "contract": "കരാർ",
+    "approved": "അംഗീകരിച്ചു",
+    "category": "വിഭാഗം ",
+    "livestock": "കന്നുകാലികൾ",
+    "description": "വിവരണം",
+    "duedate": "അവസാന തീയതി",
+    "started": "തുടങ്ങി",
+    "scheduleddate": "ഷെഡ്യൂൾ ചെയ്ത തീയതി",
+    "completed": "പൂർത്തിയാക്കി ",
+    "product": "ഉൽപ്പന്നം"
+  },
+  "general": {
     "showcompleted": "പ്രദർശനം പൂർത്തിയായി"
   },
+  "irrigation": {
+    "heading": "ജലസേചനം"
+  },
+  "maintainance": {
+    "heading": "പാടശേഖരം പരിപാലിക്കൽ"
+  },
+  "spraylogs": {
+  
+    "heading": "സ്പ്രേ ലോഗുകൾ"
+  },
+  "grazing": {
+    "heading": "മേച്ചിൽ"
+  },
+  "spreading": {
+    "heading": "പരത്തുന്നു"
+  },
+  "planting": {
+    "heading": "നടീൽ"
+  },
+  "harvest": {
+    "heading": "വിളവെടുപ്പ്"
+  },
+  "vettreatment": {
+    "heading": "മൃഗ ചികിത്സ"
+  },
+
 
   
   "materialtable": {
@@ -63,7 +104,7 @@
     "water": "വെള്ളം",
     "personal": "വ്യക്തിപരമായ",
     "timesheet": "ടൈംഷീറ്റ്",
-    "farm_assets": "കാർഷിക ആസ്തികൾ",
+    "farmassets": "കാർഷിക ആസ്തികൾ",
     "farms": "കൃഷിയിടങ്ങൾ",
     "rain": "മഴ",
     "cultivars": "കൃഷികൾ",

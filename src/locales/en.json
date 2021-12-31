@@ -2,6 +2,62 @@
   "header": {
     "logout": " Logout"
   },
+  "activities": {
+    "status": "Status",
+    "approved": "Approved",
+    "description": "Description",
+    "livestock": "Livestock",
+    "scheduleddate": "Scheduled Date",
+    "started": "Started",
+    "completed": "Completed ",
+    "contract": "Contract",
+    "category": "Category ",
+    "duedate": "Due Date",
+    "product": "Product"
+  },
+  "grazing": {
+    "heading": "Grazing"
+  },
+  "general": {
+    "showcompleted": "Show Completed"
+  },
+  "materialtable": {
+    "searchtooltip": "Search",
+    "searchplaceholder": "Search",
+    "headeractions": "Actions",
+    "bodydeletetooltip": "Delete",
+    "edittooltip": "Edit",
+    "emptydatasourcemessage": "No recorde to diplay",
+    "deletetext": "Are you sure u want to delete?",
+    "editrowcanceltip": "Cancel",
+    "editrowsavetooltip": "Save",
+    "feltertooltip": "Filter",
+    "previoustooltip": "Previous Page",
+    "nexttooltip": "Next Page",
+    "labelrowselect": "rows",
+    "bodyaddtooltip": "Add"
+  },
+  "harvest": {
+    "heading": "Harvest"
+  },
+  "irrigation": {
+    "heading": "Irrigation"
+  },
+  "maintainance": {
+    "heading": "Paddock Maintainance"
+  },
+  "planting": {
+    "heading": "Planting"
+  },
+  "spraylogs": {
+    "heading": "Spray Logs"
+  },
+  "spreading": {
+    "heading": "Spreading"
+  },
+  "vettreatment": {
+    "heading": "Vet Treatment"
+  },
   "jobs": {
     "status": "Status",
     "raised": "Raised",
@@ -19,24 +75,7 @@
     "asset": "Asset",
     "duedate": "Due Date",
     "lastupdate": "Last Update",
-    "heading": "Jobs",
-    "showcompleted": "Show Completed"
-  },
-  "materialtable": {
-    "searchtooltip": "Search",
-    "searchplaceholder": "Search",
-    "headeractions": "Actions",
-    "bodyaddtooltip": "Add",
-    "bodydeletetooltip": "Delete",
-    "edittooltip": "Edit",
-    "emptydatasourcemessage": "No recorde to diplay",
-    "deletetext": "Are you sure u want to delete?",
-    "editrowcanceltip": "Cancel",
-    "editrowsavetooltip": "Save",
-    "feltertooltip": "Filter",
-    "previoustooltip": "Previous Page",
-    "nexttooltip": "Next Page",
-    "labelrowselect": "rows"
+    "heading": "Jobs"
   },
   "navbar": {
     "dashboard": "Dashboard",
