@@ -142,6 +142,7 @@ export default function Navbar(props) {
             </Trans>
           </Menu.Item>
           <Menu.Item key="18" icon={<FaHandHoldingWater />}>
+          <Link to="/InventoryWater" />
           <Trans i18nKey="navbar.water">
             Water
             </Trans>

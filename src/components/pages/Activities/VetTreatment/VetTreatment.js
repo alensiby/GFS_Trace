@@ -130,7 +130,7 @@ lookup:{
               labelRowsSelect:t('materialtable.labelrowselect','rows')
               
             }
-          }}s
+          }}
           options={{
             showTitle: false,
             paging: true,

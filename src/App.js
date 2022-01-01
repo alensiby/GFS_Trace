@@ -23,7 +23,7 @@ import Grazing from "./components/pages/Activities/Grazing/Grazing";
 import Irrigation from "./components/pages/Activities/Irrigation/Irrigation";
 import Maintenance from "./components/pages/Activities/Maintenance/Maintenance";
 import VetTreatment from "./components/pages/Activities/VetTreatment/VetTreatment";
-
+import InventoryWater from "./components/pages/Inventory/Water/InventoryWater";
 function App (){
   const {i18n}=useTranslation();
   
@@ -48,6 +48,7 @@ function App (){
             <Route path="/Spreading" element={<Spreading/>}/>
             <Route path="/Harvest" element={<Harvest/>}/>
             <Route path="/Grazing" element={<Grazing/>}/>
+            <Route path="/InventoryWater" element={<InventoryWater/>}/>
             <Route path="/Irrigation" element={<Irrigation/>}/>
             <Route path="/Maintenance" element={<Maintenance/>}/>
             <Route path="/VetTreatment" element={<VetTreatment/>}/>
