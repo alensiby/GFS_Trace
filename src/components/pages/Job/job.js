@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import MaterialTable from "material-table";
+import { MTableCell } from "material-table";
 import { Checkbox } from "semantic-ui-react";
 import "./job.css";
 import '../Pages.css';
+import Tooltip from '@material-ui/core/Tooltip';
 
 import {useTranslation,Trans} from 'react-i18next';
 
@@ -35,6 +37,10 @@ export default function Job() {
       '4': t('jobs.completed','Completed'),
 
       } ,
+      render: rowData => {
+        return <Tooltip title={rowData.status} placement="bottom-start" arrow>
+           </Tooltip>            
+     },
       render: rowData => {
         switch (rowData.status) {
         case '0':
@@ -157,6 +163,13 @@ export default function Job() {
             filtering: true,
             actionsColumnIndex:-1
           }}
+           components={{
+          Cell: (props) => (
+            <Tooltip title={props.value ? props.value : ''}>
+              <MTableCell {...props} />
+            </Tooltip>
+          ),
+        }}
           icons={{
           
             Add: () => <AddCircleRoundedIcon fontSize="large" color="primary" />,
