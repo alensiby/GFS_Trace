@@ -84,7 +84,7 @@ export default function Outgoing() {
           Toolbar: props => (
             <div>
               <MTableToolbar {...props} />
-              <div className="toggle-switch">
+              <div className="toggle-switch" style={{padding: '0px 20px'}}>
                 <Checkbox
                   toggle
                   onClick={() => toggleselected(!selected)}
