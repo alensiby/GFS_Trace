@@ -148,8 +148,8 @@ export default function Navbar(props) {
             </Trans>
           </Menu.Item>
         </SubMenu>
-        <SubMenu key="sub3" icon={<BsPeopleFill />} title={<Trans i18nKey="navbar.personal">
-            Personal
+        <SubMenu key="sub3" icon={<BsPeopleFill />} title={<Trans i18nKey="navbar.personnel">
+            Personnel
             </Trans>}>
           <Menu.Item key="19" icon={<FaUserClock />}>
           <Trans i18nKey="navbar.timesheet">
