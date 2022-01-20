@@ -1,9 +1,18 @@
 import React, { useState } from "react";
 import MaterialTable from "material-table";
 import { Checkbox } from "semantic-ui-react";
+import { Button, Dialog, DialogActions, DialogContent, TextField } from '@material-ui/core'
+import { MTableCell } from "material-table";
+import DialogTitle from '@mui/material/DialogTitle';
+import Box from '@mui/material/Box';
+import FormControl from '@mui/material/FormControl';
 import '../../Pages.css';
+import Tooltip from '@material-ui/core/Tooltip';
 import CreateIcon from '@mui/icons-material/Create';
+import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
 import {useTranslation,Trans} from 'react-i18next';
+import Addspraylog from './NewSpraylog/Spraylognew';
+import SampleContextProvider from './NewSpraylog/context/SampleContext';
 import {Icon} from 'semantic-ui-react';
 import {
     spraylogsData_withoutcomplete,
@@ -13,7 +22,55 @@ import {
 export default function Spraylogs() {
   const {t} =useTranslation();
   const [selected, toggleselected] = useState(false);
+  const [description, setdescription] = React.useState("");
+  const [bool, setbool] = React.useState(false);
+  const [helper, sethelper] = React.useState("");
+  //const [s,setS]=React.useState(0);
   
+  //const [bool2, setbool2] = React.useState(false);
+  //const [anchorEl, setAnchorEl] = React.useState(null);
+  const [items, setitems] = React.useState([]);
+  //const [name, setname] = React.useState();
+  const [dataedit, setdataedit] = React.useState("");
+  
+  //const [helper2, sethelper2] = React.useState("");
+  
+  //const [newitem, setnewitem] = React.useState();
+  //const open = Boolean(anchorEl);
+  //const [opendescription, setopendescription] = React.useState(false);
+  //const [openedit, setopenedit] = React.useState(false);
+
+
+  const [open, setOpen] = React.useState(false);
+    
+    const handleClose = (event, reason) => {
+        setOpen(false);
+
+    };
+
+    const [openAddSpraylog, setOpenAddSpraylog] = React.useState(false);
+    const handleClickOpen = () => {
+      setOpenAddSpraylog(true);
+  };
+    const handleCloseSpraylog = (event, reason) => {
+      setOpenAddSpraylog(false);
+
+    };
+
+  const handleChange = (event) => {
+    setdescription(event.target.value);
+    setdataedit(event.target.value)
+    if (event.target.value=='') {
+        setbool(true)
+        sethelper("Required")
+    }
+    else{
+        setbool(false)
+        sethelper("")
+    }
+};
+
+
   const columns = [
     {
       title: t('activities.status','Status'),
@@ -84,11 +141,7 @@ lookup: { 'no': 'No',
         <MaterialTable
           columns={columns}
           data={selected ? spraylogsData_withcomplete : spraylogsData_withoutcomplete}
-          editable={{
-            
-            onRowUpdate:(newRow,oldRow)=> new Promise(()=>{}),
-            onRowDelete:(selectedRow)=> new Promise(()=>{})
-          }}
+          
           localization={{
             toolbar:{
               searchTooltip:t('materialtable.searchtooltip','Search'),
@@ -101,14 +154,14 @@ lookup: { 'no': 'No',
             body:{
               deleteTooltip:t('materialtable.bodydeletetooltip','Delete'),
               editTooltip:t('materialtable.edittooltip','Edit'),
-              emptyDataSourceMessage:t('materialtable.emptydatasourcemessage','No recorde to diplay'),
+              emptyDataSourceMessage:t('materialtable.emptydatasourcemessage','No records to diplay'),
               editRow:{
-                deleteText:t('materialtable.deletetext','Are you sure u want to delete?'),
+                deleteText:t('materialtable.deletetext','Are you sure you want to delete?'),
                 cancelTooltip:t('materialtable.editrowcanceltip','Cancel'),
                 saveTooltip:t('materialtable.editrowsavetooltip','Save')
               },
               filterRow:{
-                filterTooltip:t('materialtable.feltertooltip','Filter')
+                filterTooltip:t('materialtable.filtertooltip','Filter')
               }
             },
             pagination:{
@@ -127,13 +180,67 @@ lookup: { 'no': 'No',
             filtering: true,
             actionsColumnIndex:-1
           }}
-          icons={{
-          
-            
-            Edit: () => <CreateIcon color="action" />,
-           
+          components={{
+            Cell: (props) => (
+              <Tooltip placement="bottom" title={props.value ? props.value : ''}>
+                <MTableCell {...props} />
+              </Tooltip>       /// Add translation for tooltip also
+            ),
           }}
+            actions={[
+            {
+              icon: () => <AddCircleRoundedIcon fontSize="large" color="primary" />,
+              isFreeAction: true,
+              onClick: (event) => setOpen(true),
+              tooltip: 'New Item'
+            },
+            {
+              icon: () => <CreateIcon color="action" />,
+              tooltip: 'Edit Item'
+             
+            },
+          
+            ]}
         ></MaterialTable>
+         <Dialog open={open} onClose={handleClose}>
+            <DialogTitle>New Item</DialogTitle>
+            <DialogContent>
+                <Box component="form" sx={{ display: 'grid' }}>
+                    <FormControl variant="standard" sx={{ m: 1, minWidth: 420 }}>
+                        <TextField
+                            variant="standard"
+                            name="description"
+                            label="Description"
+                            value={description}
+                            onChange={handleChange}
+                            helperText={helper}
+                            error={bool}
+                            required
+                            autocomplete="off"
+                        />
+                    </FormControl>
+                </Box>
+            </DialogContent>
+            <DialogActions>
+                <Button onClick={handleClose} color="primary">CANCEL</Button>
+                <Button onClick={handleClickOpen} color="primary">SAVE</Button>
+            </DialogActions>
+          </Dialog>
+          
+          <Dialog open={openAddSpraylog} onClose={handleCloseSpraylog} maxWidth="100" scroll="paper">
+                <DialogTitle sx={{ fontSize: 24, fontWeight: 'large' }}>{description}</DialogTitle>
+                <DialogContent dividers>
+                <SampleContextProvider>
+                    <Addspraylog />
+                    </SampleContextProvider>
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={handleCloseSpraylog} color="primary">CANCEL</Button>
+                    <Button onClick={handleCloseSpraylog} color="primary">SAVE</Button>
+                </DialogActions>
+            </Dialog>
+           
+                            
       </div>
     </div>
   );

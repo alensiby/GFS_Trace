@@ -183,7 +183,7 @@ export default function Job() {
           }}
            components={{
           Cell: (props) => (
-            <Tooltip title={props.value ? props.value : ''}>
+            <Tooltip placement="bottom" title={props.value ? props.value : ''}>
               <MTableCell {...props} />
             </Tooltip>       /// Add translation for tooltip also
           ),
@@ -224,9 +224,9 @@ export default function Job() {
                 </SampleContextProvider1>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleEditClose} className="float-left">DELETE</Button>
-                    <Button onClick={handleEditClose}>CANCEL</Button>
-                    <Button onClick={handleEditClose}>SAVE</Button>
+                    <Button onClick={handleEditClose} color="secondary" className="float-left">DELETE</Button>
+                    <Button onClick={handleEditClose} color="primary">CANCEL</Button>
+                    <Button onClick={handleEditClose} color="primary">SAVE</Button>
                 </DialogActions>
             </Dialog>
       </div>
