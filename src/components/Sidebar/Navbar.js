@@ -51,6 +51,7 @@ export default function Navbar(props) {
         </Menu.Item>
         <Menu.Item key="2" icon={<VscOpenPreview />}>
           <Trans i18nKey="navbar.custom_reports">Custom Reports</Trans>
+          <Link to="/Custom" />
         </Menu.Item>
         <Menu.Item key="3" icon={<GoProject />}>
           <Link to="/Jobs" />

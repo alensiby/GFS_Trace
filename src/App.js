@@ -23,7 +23,8 @@ import Grazing from "./components/pages/Activities/Grazing/Grazing";
 import Irrigation from "./components/pages/Activities/Irrigation/Irrigation";
 import Maintenance from "./components/pages/Activities/Maintenance/Maintenance";
 import VetTreatment from "./components/pages/Activities/VetTreatment/VetTreatment";
-import InventoryWater from "./components/pages/Inventory/Water/InventoryWater";
+import InventoryWater from "./components/pages/Inventory/Water/InventoryWater"; 
+import Custom from "./components/pages/CustomReport/Custom";
 function App (){
   const {i18n}=useTranslation();
   
@@ -52,6 +53,7 @@ function App (){
             <Route path="/Irrigation" element={<Irrigation/>}/>
             <Route path="/Maintenance" element={<Maintenance/>}/>
             <Route path="/VetTreatment" element={<VetTreatment/>}/>
+            <Route path="/Custom" element={<Custom/>}/>
           {/*<Route path="/Grain" element={<Grain/>}/>*/}
            
           </Routes>
