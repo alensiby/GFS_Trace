@@ -133,6 +133,7 @@ export default function Navbar(props) {
             </Trans>
           </Menu.Item>
           <Menu.Item key="16" icon={<GiFertilizerBag />}>
+          <Link to="/InventoryFertilizer" />
           <Trans i18nKey="navbar.fertilizer">
             Fertilizer
             </Trans>
