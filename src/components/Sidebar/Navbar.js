@@ -51,6 +51,7 @@ export default function Navbar(props) {
         </Menu.Item>
         <Menu.Item key="2" icon={<VscOpenPreview />}>
           <Trans i18nKey="navbar.custom_reports">Custom Reports</Trans>
+          <Link to="/Custom" />
         </Menu.Item>
         <Menu.Item key="3" icon={<GoProject />}>
           <Link to="/Jobs" />
@@ -132,6 +133,7 @@ export default function Navbar(props) {
             </Trans>
           </Menu.Item>
           <Menu.Item key="16" icon={<GiFertilizerBag />}>
+          <Link to="/InventoryFertilizer" />
           <Trans i18nKey="navbar.fertilizer">
             Fertilizer
             </Trans>
@@ -148,8 +150,8 @@ export default function Navbar(props) {
             </Trans>
           </Menu.Item>
         </SubMenu>
-        <SubMenu key="sub3" icon={<BsPeopleFill />} title={<Trans i18nKey="navbar.personal">
-            Personal
+        <SubMenu key="sub3" icon={<BsPeopleFill />} title={<Trans i18nKey="navbar.personnel">
+            Personnel
             </Trans>}>
           <Menu.Item key="19" icon={<FaUserClock />}>
           <Trans i18nKey="navbar.timesheet">

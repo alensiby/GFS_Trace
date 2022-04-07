@@ -2,7 +2,7 @@ import React from 'react'
 import MaterialTable, { MTableToolbar } from 'material-table';
 import Export from '../../../export.png';
 import { storages_data } from '../../../../../Data/InventoryWaterData'
-import './archived.css';
+
 export default function Storages() {
     const [data, setData] = React.useState(storages_data)
     const columns = [{

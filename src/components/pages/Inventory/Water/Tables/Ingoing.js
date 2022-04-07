@@ -5,6 +5,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import Export from '../../../export.png';
 import { ingoing_data } from '../../../../../Data/InventoryWaterData';
 import { Checkbox } from "semantic-ui-react";
+import './archived.css';
 export default function Ingoing() {
   const [selected, toggleselected] = React.useState(false);
     const [data, setData] = React.useState(ingoing_data)
@@ -82,7 +83,7 @@ export default function Ingoing() {
                   Toolbar: props => (
                     <div>
                       <MTableToolbar {...props} />
-                      <div className="toggle-switch">
+                      <div className="toggle-switch" style={{padding: '0px 20px'}}>
                         <Checkbox
                           toggle
                           onClick={() => toggleselected(!selected)}

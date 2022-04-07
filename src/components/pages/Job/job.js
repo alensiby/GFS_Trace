@@ -1,9 +1,16 @@
 import React, { useState } from "react";
 import MaterialTable from "material-table";
+import { MTableCell } from "material-table";
 import { Checkbox } from "semantic-ui-react";
+import { Button, Dialog, DialogActions, DialogContent } from '@material-ui/core';
+import { DialogTitle } from '@mui/material';
 import "./job.css";
 import '../Pages.css';
-
+import Tooltip from '@material-ui/core/Tooltip';
+import Editjob from './JobEdit/Jobedit';
+import Addjob from './NewJob/Jobnew';
+import SampleContextProvider from './NewJob/context/SampleContext';
+import SampleContextProvider1 from './JobEdit/context/SampleContext';
 import {useTranslation,Trans} from 'react-i18next';
 
 import CreateIcon from '@mui/icons-material/Create';
@@ -17,6 +24,23 @@ import {
 
 export default function Job() {
 
+  const [open, setOpen] = React.useState(false);
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+    const handleClose = (event, reason) => {
+        setOpen(false);
+
+    };
+    const [editopen, setEditOpen] = React.useState(false);
+    const handleClickEditOpen = () => {
+        setEditOpen(true);
+    };
+
+    const handleEditClose = (event, reason) => {
+        setEditOpen(false);
+
+    };
 
   const [selected, toggleselected] = useState(false);
   const {t} =useTranslation();
@@ -35,6 +59,10 @@ export default function Job() {
       '4': t('jobs.completed','Completed'),
 
       } ,
+      render: rowData => {
+        return <Tooltip title={rowData.status} placement="bottom-start" arrow>
+           </Tooltip>            
+     },
       render: rowData => {
         switch (rowData.status) {
         case '0':
@@ -64,13 +92,14 @@ export default function Job() {
     render: rowData => {
       switch (rowData.priority) {
         case '0':
-          return <Icon name='angle down'size='large'/>
-   case '2':
-           return <Icon name='red angle double up'size='large'/>
-   case '1':
+           return <Icon name='angle down'size='large'/>
+        case '1':
            return <Icon name='blue angle up'size='large'/>
-   case '3':
-          return <Icon name='orange exclamation triangle'size='large'/>
+        case '2':
+           return <Icon name='red angle double up'size='large'/>
+   
+        case '3':
+           return <Icon name='orange exclamation triangle'size='large'/>
     default:
       return <></>
     }}
@@ -111,12 +140,7 @@ export default function Job() {
         <MaterialTable
           columns={columns}
           data={selected ? jobData_withcomplete : jobData_withoutcomplete}
-          editable={{
-            onRowAdd:(newRow)=> new Promise((resolve,reject)=>{}),
-            onRowUpdate:(newRow,oldRow)=> new Promise(()=>{}),
-            onRowDelete:(selectedRow)=> new Promise(()=>{})
-          }}
-
+          
           localization={{
             toolbar:{
               searchTooltip:t('materialtable.searchtooltip','Search'),
@@ -130,7 +154,7 @@ export default function Job() {
               addTooltip:t('materialtable.bodyaddtooltip','Add'),
               deleteTooltip:t('materialtable.bodydeletetooltip','Delete'),
               editTooltip:t('materialtable.edittooltip','Edit'),
-              emptyDataSourceMessage:t('materialtable.emptydatasourcemessage','No recorde to diplay'),
+              emptyDataSourceMessage:t('materialtable.emptydatasourcemessage','No records to diplay'),
               editRow:{
                 deleteText:t('materialtable.deletetext','Are you sure u want to delete?'),
                 cancelTooltip:t('materialtable.editrowcanceltip','Cancel'),
@@ -157,13 +181,54 @@ export default function Job() {
             filtering: true,
             actionsColumnIndex:-1
           }}
-          icons={{
-          
-            Add: () => <AddCircleRoundedIcon fontSize="large" color="primary" />,
-            Edit: () => <CreateIcon color="action" />,
-            Delete: () => <DeleteIcon color="action" />
-          }}
+           components={{
+          Cell: (props) => (
+            <Tooltip placement="bottom" title={props.value ? props.value : ''}>
+              <MTableCell {...props} />
+            </Tooltip>       /// Add translation for tooltip also
+          ),
+        }}
+          actions={[
+          {
+            icon: () => <AddCircleRoundedIcon fontSize="large" color="primary" />,
+            isFreeAction: true,
+            onClick: (event) => setOpen(true)
+          },
+          {
+            icon: () => <CreateIcon color="action" />,
+           
+            onClick: (event) => setEditOpen(true)
+          },
+          {
+            icon: () => <DeleteIcon color="action" />
+          }
+          ]}
         ></MaterialTable>
+        <Dialog open={open} onClose={handleClose} maxWidth="100" scroll="paper">
+                <DialogTitle sx={{ fontSize: 24, fontWeight: 'large' }}>Job Details</DialogTitle>
+                <DialogContent>
+                <SampleContextProvider>
+                    <Addjob />
+                    </SampleContextProvider>
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={handleClose} color="primary">CANCEL</Button>
+                    <Button onClick={handleClose} color="primary">SAVE</Button>
+                </DialogActions>
+            </Dialog>
+            <Dialog open={editopen} onClose={handleEditClose} maxWidth="lg" scroll="paper">
+                <DialogTitle sx={{fontSize:24, fontWeight:'large'}}>Job Details</DialogTitle>
+                <DialogContent>
+                <SampleContextProvider1>
+                    <Editjob />
+                </SampleContextProvider1>
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={handleEditClose} color="secondary" className="float-left">DELETE</Button>
+                    <Button onClick={handleEditClose} color="primary">CANCEL</Button>
+                    <Button onClick={handleEditClose} color="primary">SAVE</Button>
+                </DialogActions>
+            </Dialog>
       </div>
     </div>
   );
