@@ -89,7 +89,7 @@ export default function Outgoing() {
                   toggle
                   onClick={() => toggleselected(!selected)}
                   checked={selected}
-                  label="Show Archived Tickets"
+                  label="Show Archived"
                 />
               </div>
             </div>
