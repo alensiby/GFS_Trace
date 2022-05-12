@@ -12,10 +12,8 @@ export default function Header() {
       </div>
       <div className="spacer"></div>
       <span className="userDetails">Align Agith </span> |
-      <span className="userDetails" style={{ color: "green", float: "right" }}>
-        {" "}
-        Owner
-      </span>
+      
+     
       <button className="logout"><Trans i18nKey="header.logout"> Logout
         </Trans></button>
     </div>

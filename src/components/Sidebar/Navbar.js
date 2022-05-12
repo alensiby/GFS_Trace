@@ -116,6 +116,7 @@ export default function Navbar(props) {
             Inventory
             </Trans>}>
           <Menu.Item key="13" icon={<VscOpenPreview />}>
+            <Link to="InventoryReport"/>
           <Trans i18nKey="navbar.inventory_reports">
             Inventory Reports
             </Trans>

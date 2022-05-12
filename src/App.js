@@ -25,7 +25,9 @@ import Maintenance from "./components/pages/Activities/Maintenance/Maintenance";
 import VetTreatment from "./components/pages/Activities/VetTreatment/VetTreatment";
 import InventoryWater from "./components/pages/Inventory/Water/InventoryWater";  
 import Custom from "./components/pages/CustomReport/Custom";
+
 import InventoryFertilizer from "./components/pages/Inventory/FertilizerInventory/InventoryFertilizer";
+import Inventoryreport from "./components/pages/Inventory/InventoryReport/Inventoryreport";
 function App (){
   const {i18n}=useTranslation();
   
@@ -56,6 +58,7 @@ function App (){
             <Route path="/Maintenance" element={<Maintenance/>}/>
             <Route path="/VetTreatment" element={<VetTreatment/>}/>
             <Route path="/Custom" element={<Custom/>}/>
+            <Route path="/InventoryReport" element={<Inventoryreport/>}/>
           {/*<Route path="/Grain" element={<Grain/>}/>*/}
            
           </Routes>
