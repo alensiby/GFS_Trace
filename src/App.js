@@ -38,7 +38,7 @@ function App (){
     return (
       <I18nextProvider i18n={i18n}>
       <Router >
-        <Structure/>
+        <Structure>
           <Routes>
             {/* <Route path="/" element={<Dashboard/>}/> */}
             <Route path="/" element={<Signin/>}/>
@@ -72,7 +72,7 @@ function App (){
            
           </Routes>
           
-               
+        </Structure>     
          
       </Router>
       </I18nextProvider>
