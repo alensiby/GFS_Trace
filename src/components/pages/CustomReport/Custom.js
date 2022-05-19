@@ -1,14 +1,10 @@
 import React from 'react'
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DateRangePicker from '@mui/lab/DateRangePicker';
 import Box from '@mui/material/Box';
-import { Segment } from 'semantic-ui-react';
 import ReportTableDetails from './ReportTableDetails';
 import { Grid } from '@mui/material';
 
@@ -21,12 +17,12 @@ function Custom() {
   return (
     <div>
       <Grid container>
-        <Grid item xs={2}>
-          <h1>Custom Reports</h1>
+        <Grid item xs={3}>
+          <h1 style={{paddingLeft: "30px", paddingTop: "20px"}}>Custom Reports</h1>
         </Grid>
         <Grid item xs={3}>
           <br />
-          <select class="ui dropdown" style={{ width: 200, backgroundColor: 'green', color: 'white' }} onChange={handleChange}>
+          <select class="ui dropdown" style={{ width: 200, backgroundColor: 'lightgreen', color: 'black' }} onChange={handleChange}>
             <option value="" >Farms</option>
             <option value={2} >Paddocks</option>
             <option value={3} >Equipment</option>
@@ -37,7 +33,7 @@ function Custom() {
           </select>
         </Grid>
 
-        <Grid item xs={5}>
+        {/* <Grid item xs={5}>
           <LocalizationProvider dateAdapter={AdapterDateFns}>
             <div>
               <Typography sx={{ mt: 2, mb: 1 }}>Date Range </Typography>
@@ -58,7 +54,7 @@ function Custom() {
               />
             </div>
           </LocalizationProvider>
-        </Grid>
+        </Grid> */}
       </Grid>
       <br />
       <br />

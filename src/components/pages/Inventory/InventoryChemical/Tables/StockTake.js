@@ -3,6 +3,7 @@ import MaterialTable,{ MTableToolbar } from 'material-table';
 import CreateIcon from '@mui/icons-material/Create';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Export from '../../../export.png';
+import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
 import { stocktake_data } from '../../../../../Data/InventoryChemicalData';
 import { Checkbox } from "semantic-ui-react";
 export default function StockTake() {
@@ -42,6 +43,7 @@ export default function StockTake() {
                 data={data}
                 columns={selected ? columns_archived : columns}
                 editable={{
+                  onRowAdd:(newRow)=> new Promise((resolve,reject)=>{}),
                     onRowUpdate: (newData, oldData) =>
                       new Promise((resolve, reject) => {
                         setTimeout(() => {
@@ -89,10 +91,12 @@ export default function StockTake() {
                   ),
                 }}
                 icons={{
-                    Export: () => <img src={Export}></img>,
-                    Edit: () => <CreateIcon color="action" />,
-                    Delete: () => <DeleteIcon color="action" />
-                  }}
+                  Add: () => <AddCircleRoundedIcon fontSize="large" color="primary" />,
+                  Edit: () => <CreateIcon color="action" />,
+                  Export: () => <img src={Export}></img>,
+                  Delete: () => <DeleteIcon color="action" />
+                 
+                }}
             />
         </div>
     )

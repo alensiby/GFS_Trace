@@ -1,1 +1,1 @@
-export { default, calendarPickerSkeletonClasses, getCalendarPickerSkeletonUtilityClass } from './CalendarPickerSkeleton';
+export { CalendarPickerSkeleton as default, calendarPickerSkeletonClasses, getCalendarPickerSkeletonUtilityClass } from '@mui/x-date-pickers/CalendarPickerSkeleton';

@@ -1,3 +1,2 @@
-export { default, calendarPickerSkeletonClasses, getCalendarPickerSkeletonUtilityClass, } from './CalendarPickerSkeleton';
-export declare type CalendarPickerSkeletonClassKey = import('./CalendarPickerSkeleton').CalendarPickerSkeletonClassKey;
-export declare type CalendarPickerSkeletonProps = import('./CalendarPickerSkeleton').CalendarPickerSkeletonProps;
+export { CalendarPickerSkeleton as default, calendarPickerSkeletonClasses, getCalendarPickerSkeletonUtilityClass, } from '@mui/x-date-pickers/CalendarPickerSkeleton';
+export type { CalendarPickerSkeletonClassKey, CalendarPickerSkeletonProps, } from '@mui/x-date-pickers/CalendarPickerSkeleton';

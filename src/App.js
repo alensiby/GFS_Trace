@@ -3,8 +3,12 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useTranslation, I18nextProvider } from 'react-i18next';
 import Structure from "./components/Layout/Structure";
-import Dashboard from "./components/pages/Dashboard/Dashboard";
+//import Dashboard from "./components/pages/Dashboard/Dashboard";
 import Job from "./components/pages/Job/job";
+import Signup from "./components/pages/Login/SignUp";
+import Signin from "./components/pages/Login/SignIn";
+import Loggedin from "./components/pages/Login/Loggedin";
+import Forget from "./components/pages/Login/Forget";
 import Equipments from "./components/pages/FarmAssets/Equipments/Equipments";
 import Farms from "./components/pages/FarmAssets/Farms/farms";
 import Chemicals from "./components/pages/FarmAssets/Chemicals/Chemical";
@@ -14,7 +18,7 @@ import Livestock from "./components/pages/FarmAssets/Livestock/LiveStock";
 import WaterLicence from "./components/pages/FarmAssets/WaterLicence/WaterLicence";
 import Nozzles from "./components/pages/FarmAssets/Nozzles/Nozzles";
 import InventoryChemical from "./components/pages/Inventory/InventoryChemical/InventoryChemical";
-//import Grain from "./components/pages/Inventory/Grain/Grain";
+import Grain from "./components/pages/Inventory/GrainInventory/GrainsTable";
 import Spraylogs from "./components/pages/Activities/Spraylogs/Spraylogs";
 import Planting from "./components/pages/Activities/Planting/Planting";
 import Spreading from "./components/pages/Activities/Spreading/Spreading";
@@ -24,8 +28,8 @@ import Irrigation from "./components/pages/Activities/Irrigation/Irrigation";
 import Maintenance from "./components/pages/Activities/Maintenance/Maintenance";
 import VetTreatment from "./components/pages/Activities/VetTreatment/VetTreatment";
 import InventoryWater from "./components/pages/Inventory/Water/InventoryWater";  
-import Custom from "./components/pages/CustomReport/Custom";
-
+import Custom from "./components/pages/CustomReport/Custom"; 
+import InventoryFuel from "./components/pages/Inventory/FuelInventory/FuelTable";
 import InventoryFertilizer from "./components/pages/Inventory/FertilizerInventory/InventoryFertilizer";
 import Inventoryreport from "./components/pages/Inventory/InventoryReport/Inventoryreport";
 function App (){
@@ -34,9 +38,13 @@ function App (){
     return (
       <I18nextProvider i18n={i18n}>
       <Router >
-        <Structure>
+        <Structure/>
           <Routes>
-            <Route path="/" element={<Dashboard/>}/>
+            {/* <Route path="/" element={<Dashboard/>}/> */}
+            <Route path="/" element={<Signin/>}/>
+            {/* <Route path="/Signup" element={<Signup/>}/>
+            <Route path="/Loggedin" element={<Loggedin/>}/>
+            <Route path="/Forget" element={<Forget/>}/> */}
             <Route path="/Jobs" element={<Job/>}/>
             <Route path="/Equipments" element={<Equipments/>}/>
             <Route path="/Farms" element={<Farms/>}/>
@@ -48,6 +56,7 @@ function App (){
             <Route path="/WaterLicence" element={<WaterLicence/>}/>
             <Route path="/InventoryChemical" element={<InventoryChemical/>}/>
             <Route path="/InventoryFertilizer" element={<InventoryFertilizer/>}/>
+            <Route path="/InventoryFuel" element={<InventoryFuel/>}/>
             <Route path="/Spraylogs" element={<Spraylogs/>}/>
             <Route path="/Planting" element={<Planting/>}/>
             <Route path="/Spreading" element={<Spreading/>}/>
@@ -59,11 +68,11 @@ function App (){
             <Route path="/VetTreatment" element={<VetTreatment/>}/>
             <Route path="/Custom" element={<Custom/>}/>
             <Route path="/InventoryReport" element={<Inventoryreport/>}/>
-          {/*<Route path="/Grain" element={<Grain/>}/>*/}
+            <Route path="/Grain" element={<Grain/>}/>
            
           </Routes>
           
-          </Structure>       
+               
          
       </Router>
       </I18nextProvider>

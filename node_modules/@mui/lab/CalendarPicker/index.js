@@ -1,1 +1,1 @@
-export { default, calendarPickerClasses } from './CalendarPicker';
+export { CalendarPicker as default, calendarPickerClasses } from '@mui/x-date-pickers/CalendarPicker';

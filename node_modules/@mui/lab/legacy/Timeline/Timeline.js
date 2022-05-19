@@ -36,11 +36,11 @@ var TimelineRoot = styled('ul', {
  *
  * Demos:
  *
- * - [Timeline](https://mui.com/components/timeline/)
+ * - [Timeline](https://mui.com/material-ui/react-timeline/)
  *
  * API:
  *
- * - [Timeline API](https://mui.com/api/timeline/)
+ * - [Timeline API](https://mui.com/material-ui/api/timeline/)
  */
 
 var Timeline = /*#__PURE__*/React.forwardRef(function Timeline(inProps, ref) {

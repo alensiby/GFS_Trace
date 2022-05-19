@@ -1,2 +1,1 @@
-export * from './StaticDateTimePicker';
-export { default } from './StaticDateTimePicker';
+export { StaticDateTimePicker as default } from '@mui/x-date-pickers/StaticDateTimePicker';

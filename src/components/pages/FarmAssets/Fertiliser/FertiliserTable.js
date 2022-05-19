@@ -33,6 +33,13 @@ export default function FertiliserTable() {
   ]
   return (
     <div>
+      <div  className= "table-size">
+    
+    <div className= "subheader">  
+   
+        <h1 style={{"color": "black"}}>Fertilizers </h1><span>&nbsp;&nbsp;</span>
+  
+    </div>
       <MaterialTable title="Fertilisers"
         data={data}
         columns={columns}
@@ -69,6 +76,7 @@ export default function FertiliserTable() {
             }),
         }}
         options={{
+          showTitle: false,
           actionsColumnIndex: -1,
           exportButton: true,
           filtering: true,
@@ -81,6 +89,7 @@ export default function FertiliserTable() {
           Delete: () => <DeleteIcon color="action" />
         }}
       />
+    </div>
     </div>
   )
 }
