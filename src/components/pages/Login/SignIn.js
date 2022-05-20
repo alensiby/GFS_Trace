@@ -1,6 +1,6 @@
 import React from 'react'
 import './Login.css'
-import farmsimple from './farmsimple.PNG'
+import farmsimple from '../../../images/logo.jpg'
 import { useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -34,6 +34,13 @@ function SignIn() {
         <div className="signin-container">
             <form className="input-section">
                 {/* <img src={farmsimple} alt="FarmSimple"></img> */}
+                <div>
+               
+                <div class="logoNameSignin" style={{ color: "rgb(79, 79, 79)" }}>
+                <img className="logo" src={farmsimple} width="50" height="50" />
+                 <b>GFS</b> Trace
+                </div>
+                </div>
                 <input type="text" onChange={(e)=>setEmail(e.target.value)} placeholder="Email" />
                 <input type="password" onChange={(e)=>setPassword(e.target.value)} placeholder="Password" />
                 <div className="button-right">
