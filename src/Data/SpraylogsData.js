@@ -1,15 +1,16 @@
 
 export const spraylogsData_withoutcomplete=[
-    { "status": "1", "contract": "no", "approved": "yes","description": "xcvb", "duedate": "12/20/2021", "started": "yes", "completed": "no"},
-    { "status": "3", "contract": "yes", "approved": "yes","description": "dfgh", "duedate": "12/28/2021", "started": "yes", "completed": "no"},
-    { "status": "2", "contract": "no", "approved": "yes","description": "cvbn", "duedate": "12/19/2021", "started": "no", "completed": "no"},
-    { "status": "0", "contract": "yes", "approved": "yes","description": "poim", "duedate": "12/20/2021", "started": "yes", "completed": "no"},
-  ];
+  {"farm":"Farm1", "status": "1", "contract": "1", "approved": "0","description": "xcvb", "duedate": "12/20/2021", "started": "1", "completed": "0"},
+
+  {"farm":"Farm1", "status": "3", "contract": "0", "approved": "0","description": "dfgh", "duedate": "12/28/2021", "started": "1", "completed": "0"},
+  {"farm":"Farm1", "status": "2", "contract": "1", "approved": "1","description": "cvbn", "duedate": "12/19/2021", "started": "1", "completed": "0"},
+  {"farm":"Farm1", "status": "0", "contract": "0", "approved": "1","description": "poim", "duedate": "12/20/2021", "started": "0", "completed": "0"},
+];
   
   export const spraylogsData_withcomplete=[
-    { "status": "1", "contract": "no", "approved": "yes","description": "xcvb", "duedate": "12/20/2021", "started": "yes", "completed": "no"},
-    { "status": "0", "contract": "yes", "approved": "yes","description": "asdfg", "duedate": "11/25/2021", "started": "yes", "completed": "yes"},
-    { "status": "3", "contract": "yes", "approved": "yes","description": "dfgh", "duedate": "12/28/2021", "started": "yes", "completed": "no"},
-    { "status": "2", "contract": "no", "approved": "yes","description": "cvbn", "duedate": "12/19/2021", "started": "no", "completed": "no"},
-    { "status": "0", "contract": "yes", "approved": "yes","description": "poim", "duedate": "12/20/2021", "started": "yes", "completed": "no"},
+    {"farm":"Farm1", "status": "1", "contract": "1", "approved": "0","description": "xcvb", "duedate": "12/20/2021", "started": "1", "completed": "0"},
+    {"farm":"Farm1", "status": "0", "contract": "1", "approved": "1","description": "asdfg", "duedate": "11/25/2021", "started": "1", "completed": "1"},
+    {"farm":"Farm1", "status": "3", "contract": "0", "approved": "0","description": "dfgh", "duedate": "12/28/2021", "started": "1", "completed": "0"},
+    { "farm":"Farm1","status": "2", "contract": "1", "approved": "1","description": "cvbn", "duedate": "12/19/2021", "started": "1", "completed": "0"},
+    {"farm":"Farm1", "status": "0", "contract": "0", "approved": "1","description": "poim", "duedate": "12/20/2021", "started": "0", "completed": "0"},
   ];

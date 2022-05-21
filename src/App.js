@@ -7,7 +7,6 @@ import Structure from "./components/Layout/Structure";
 import Job from "./components/pages/Job/job";
 import Signup from "./components/pages/Login/SignUp";
 import Signin from "./components/pages/Login/SignIn";
-import Loggedin from "./components/pages/Login/Loggedin";
 import Forget from "./components/pages/Login/Forget";
 import Equipments from "./components/pages/FarmAssets/Equipments/Equipments";
 import Farms from "./components/pages/FarmAssets/Farms/farms";
@@ -42,9 +41,9 @@ function App (){
           <Routes>
             {/* <Route path="/" element={<Dashboard/>}/> */}
             <Route path="/" element={<Signin/>}/>
-            {/* <Route path="/Signup" element={<Signup/>}/>
-            <Route path="/Loggedin" element={<Loggedin/>}/>
-            <Route path="/Forget" element={<Forget/>}/> */}
+            <Route path="/Signup" element={<Signup/>}/>
+           
+            <Route path="/Forget" element={<Forget/>}/>
             <Route path="/Jobs" element={<Job/>}/>
             <Route path="/Equipments" element={<Equipments/>}/>
             <Route path="/Farms" element={<Farms/>}/>

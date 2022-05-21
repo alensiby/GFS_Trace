@@ -1,6 +1,5 @@
 import React from 'react'
 import './Login.css'
-import farmsimple from './farmsimple.PNG'
 import { Link } from 'react-router-dom'
 function SignUp() {
     return (
@@ -13,6 +12,8 @@ function SignUp() {
                 <input type="text" placeholder="Last Name" />
                 <input type="text" placeholder="Company Name" />
                 <input type="text" placeholder="Email" />
+                <input type="text" placeholder="Password" />
+                <input type="text" placeholder="Re-enter password" />
             </form>
             <div className="v-card__actions">
                 <Link to="/" className="btn-cancel">CANCEL</Link>

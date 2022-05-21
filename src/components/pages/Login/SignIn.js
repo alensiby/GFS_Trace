@@ -33,7 +33,7 @@ function SignIn() {
             {/* <button onClick={handleClick} className="btn-grain">GRAIN CONSOLE</button> */}
         <div className="signin-container">
             <form className="input-section">
-                {/* <img src={farmsimple} alt="FarmSimple"></img> */}
+               
                 <div>
                
                 <div class="logoNameSignin" style={{ color: "rgb(79, 79, 79)" }}>
