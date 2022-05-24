@@ -1,2 +1,1 @@
-export * from './DesktopDatePicker';
-export { default } from './DesktopDatePicker';
+export { DesktopDatePicker as default } from '@mui/x-date-pickers/DesktopDatePicker';

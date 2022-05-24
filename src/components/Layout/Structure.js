@@ -5,12 +5,14 @@ import { Layout } from 'antd';
 import Navbar from '../Sidebar/Navbar';
 import Headerbar from '../HeaderFooter/Header';
 import Footerbar from '../HeaderFooter/footer';
+import SignIn from '../pages/Login/SignIn';
 
 const { Header, Content, Footer, Sider } = Layout;
 export default function Structure({children}) {
   const [collapsed, setcollapsed] = useState(false);
 
-  return (
+  return (<>
+  {window.location.pathname==="/Login"?<SignIn/>:
    <Layout style={{ minHeight: '100vh' }}>
       <Sider 
        collapsible  collapsed={collapsed} onCollapse={setcollapsed} >
@@ -27,6 +29,7 @@ export default function Structure({children}) {
           <Footerbar/>
           </Footer>
       </Layout>
-    </Layout>
+    </Layout>}
+    </>
   );
 }

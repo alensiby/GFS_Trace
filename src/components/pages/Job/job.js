@@ -1,26 +1,40 @@
 import React, { useState } from "react";
-import MaterialTable from "material-table";
-import { MTableCell } from "material-table";
-import { Checkbox } from "semantic-ui-react";
-import { Button, Dialog, DialogActions, DialogContent } from '@material-ui/core';
-import { DialogTitle } from '@mui/material';
+import MaterialTable, { MTableCell }  from "material-table";
+import { Checkbox, Modal, Icon, Form, Button, Input } from "semantic-ui-react";
 import "./job.css";
 import '../Pages.css';
 import Tooltip from '@material-ui/core/Tooltip';
-import Editjob from './JobEdit/Jobedit';
-import Addjob from './NewJob/Jobnew';
-import SampleContextProvider from './NewJob/context/SampleContext';
-import SampleContextProvider1 from './JobEdit/context/SampleContext';
 import {useTranslation,Trans} from 'react-i18next';
-
 import CreateIcon from '@mui/icons-material/Create';
 import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
 import DeleteIcon from '@mui/icons-material/Delete';
-import {Icon} from 'semantic-ui-react';
+import { Useform} from './Useform';
+import Select from './controls/Select';
+import SelectCheck from './controls/SelectCheck';
+import *as jobAssign from './services/JobAssign';
+import Category from './controls/Category';
+import MyDatePicker from './controls/MyDatePicker';
+import { Grid,TextField, Fade, FormControl, InputLabel, MenuItem, Select as MuiSelect } from '@material-ui/core';
+import './destxt.css'
+import { TextareaAutosize } from '@mui/material';
+
 import {
   jobData_withoutcomplete,
   jobData_withcomplete,
 } from "../../../Data/JobData";
+
+const initialValues = {
+    creator: '',
+    assigned: '',
+    category: '',
+    dueDate: new Date(),
+    priority: '',
+    started: '',
+    completed: '',
+    restartjob: '',
+    description: "",
+    notes: "",
+}
 
 export default function Job() {
 
@@ -28,21 +42,11 @@ export default function Job() {
     const handleClickOpen = () => {
         setOpen(true);
     };
-    const handleClose = (event, reason) => {
-        setOpen(false);
-
-    };
-    const [editopen, setEditOpen] = React.useState(false);
-    const handleClickEditOpen = () => {
-        setEditOpen(true);
-    };
-
-    const handleEditClose = (event, reason) => {
-        setEditOpen(false);
-
-    };
+   
 
   const [selected, toggleselected] = useState(false);
+  const [rowdatas, setrowdatas] = React.useState({});
+  const [newedit, setnewedit] = React.useState(true);
   const {t} =useTranslation();
   
   const columns = [
@@ -115,6 +119,69 @@ export default function Job() {
     
   ];
  
+  const {
+    values,
+    setValues,
+    handleInputChange
+} = Useform(initialValues);
+
+const [bool, setbool] = React.useState(false);
+const [status, setstatus] = React.useState(1);
+const [startdate, setstartdate] = React.useState('None');
+const [starttime, setstarttime] = React.useState('');
+const [enddate, setenddate] = React.useState('None');
+const [endtime, setendtime] = React.useState('');
+const [img, setimg] = React.useState(<Icon name='blue circle outline' size='large'/>);
+const date = "";
+var d = 3;
+const [checked, setChecked] = React.useState(false);
+
+const handleChange = (event) => {
+    setstatus(event.target.value);
+    d = event.target.value;
+    setimg(jobAssign.getStatus()[d - 1].icon);
+    if (d == 3 || (status <= 2 && d > 3)) {
+        const current = new Date();
+        const date = current.toLocaleDateString('en-GB',
+            {
+                day: '2-digit', month: 'long', year: 'numeric'
+            }).replace(/ /g, ' ');
+        setstartdate(date);
+        setstarttime(current.toLocaleTimeString("en-US",
+            {
+                hour: "2-digit",
+                minute: "2-digit",
+            }));
+    }
+    if (d == 5) {
+        const current = new Date();
+        setChecked(true);
+        setbool(true);
+        const date = current.toLocaleDateString('en-GB',
+            {
+                day: '2-digit', month: 'long', year: 'numeric'
+            }).replace(/ /g, ' ');
+        setenddate(date);
+        setendtime(current.toLocaleTimeString("en-US",
+            {
+                hour: "2-digit",
+                minute: "2-digit",
+            }));
+
+    }
+
+};
+
+const handleClick = (e) => {
+    setChecked(false);
+    setbool(false);
+    setenddate('None');
+    setendtime('');
+    setstatus(3);
+    setimg(jobAssign.getStatus()[2].icon);
+}
+
+
   return (
     <div  className= "table-size">
     
@@ -135,7 +202,141 @@ export default function Job() {
         <div className="completed"><Trans i18nKey="general.showcompleted">Show Completed</Trans></div>
 
       </div>
-
+      <Modal onClose={() => setOpen(false)} open={open} as={Form}  size='small'>
+        <Modal.Header>
+          {newedit === true ? "New Job" : "Edit Job"}
+        </Modal.Header>
+        <Modal.Content>
+        
+        <Form>
+             <InputLabel>CREATOR</InputLabel>
+                <FormControl fullWidth>
+                    <TextField                    
+                        name="creator"
+                        value="JESTEENA JOSE"
+                        variant="standard"
+                        fluid
+                        InputProps={{
+                            readOnly: true,
+                          }}
+                        onChange={handleInputChange}
+                        defaultValue=""
+                    />
+                </FormControl>
+                    <br/><br/>
+                   
+                    <SelectCheck
+                        name="assigned"
+                        label="ASSIGNED"
+                        value={values.assigned}
+                        onChange={handleInputChange}
+                    />
+                    <br /><br />
+                    <Category
+                        name="category"
+                        label="Category"
+                        value={values.category}
+                        onChange={handleInputChange}
+                        options={jobAssign.getCategory()}
+                        
+                    />
+                    <br /><br />
+                  
+                    <InputLabel>DUE DATE</InputLabel>
+                   
+                            <MyDatePicker
+                                name="dueDate"
+                                
+                                value={values.dueDate}
+                                onChange={handleInputChange}
+                                defaultValue={rowdatas.duedate}
+                            />
+                      <br /><br /> <br />
+                        
+                            <Select
+                                name="priority"
+                                label="PRIORITY"
+                                value={values.priority}
+                                
+                                onChange={handleInputChange}
+                                options={jobAssign.getPriority()}
+                                
+                            />    
+                    <br /> <br />
+                    <Grid container >
+                        <Grid container spacing={2}>
+                            <Grid item xs={6} sm={6}>
+                                <InputLabel>STARTED</InputLabel>
+                                <p>{startdate}</p>
+                                <p>{starttime}</p>
+                            </Grid>
+                            
+                            <Grid item xs={6} sm={6}>
+                                <InputLabel>COMPLETED</InputLabel>
+                                <p>{enddate}</p>
+                                <p>{endtime}</p>
+                            </Grid>
+                        </Grid>
+                        <br /><br />  <br /><br />
+                        <Grid container spacing={0} alignItems="center">
+                            <Grid item xs={0} sm={0} md={0}>
+                                <br />
+                                {img}
+                            </Grid>
+                            <Grid item xs={30} md={4}>
+                                <FormControl fullWidth
+                                    variant="standard">
+                                    <InputLabel>STATUS</InputLabel>
+                                    <MuiSelect
+                                        label="STATUS"
+                                        name="status"
+                                        value={status}
+                                        onChange={handleChange}
+                                        inputProps={{ readOnly: bool }}>
+                                        {
+                                            jobAssign.getStatus().map(
+                                                item => (<MenuItem key={item.id} value={item.id}>{item.title}</MenuItem>)
+                                            )
+                                        }
+                                    </MuiSelect>
+                                </FormControl>
+                                </Grid>
+                            <Grid item xs={30} md={5}>
+                                <Fade in={checked}>
+                                    <p style={{cursor:'pointer', paddingLeft:'95px', color:'green'}} onClick={handleClick}>RE-START JOB</p>
+                                </Fade>
+                            </Grid>
+                        </Grid>
+                    </Grid >
+                    <br />
+                    <div className="des">
+                        <label>DESCRIPTION</label>
+                    </div>
+                    <br />
+                    <TextareaAutosize style={{border:"none",outline:"none",width:650, height:200}}/>
+                    <div className="des">
+                        <label>NOTES</label>
+                    </div>
+                    <br />
+                    <TextareaAutosize style={{border:"none",outline:"none",width:650, height:200}}/>
+        </Form>
+            </Modal.Content>
+        <Modal.Actions>
+          <Button type="submit" color="black" onClick={() => setOpen(false)}>
+            Cancel
+          </Button>
+          <Button
+            content="Save"
+            labelPosition="right"
+            icon="checkmark"
+            onClick={() => {
+              setOpen(false);
+             
+            }}
+            positive
+          />
+        </Modal.Actions>
+      </Modal>
       <div className="equipment-table">
         <MaterialTable
           columns={columns}
@@ -192,43 +393,26 @@ export default function Job() {
           {
             icon: () => <AddCircleRoundedIcon fontSize="large" color="primary" />,
             isFreeAction: true,
-            onClick: (event) => setOpen(true)
+            onClick: () => {
+                setnewedit(true);
+                setrowdatas({});
+                setOpen(true);
+              },
           },
           {
             icon: () => <CreateIcon color="action" />,
            
-            onClick: (event) => setEditOpen(true)
+            onClick: (rowData, e) => {
+                setnewedit(false);
+                setrowdatas(e);
+                setOpen(true);
+              },
           },
           {
             icon: () => <DeleteIcon color="action" />
           }
           ]}
-        ></MaterialTable>
-        <Dialog open={open} onClose={handleClose} maxWidth="100" scroll="paper">
-                <DialogTitle sx={{ fontSize: 24, fontWeight: 'large' }}>Job Details</DialogTitle>
-                <DialogContent>
-                <SampleContextProvider>
-                    <Addjob />
-                    </SampleContextProvider>
-                </DialogContent>
-                <DialogActions>
-                    <Button onClick={handleClose} color="primary">CANCEL</Button>
-                    <Button onClick={handleClose} color="primary">SAVE</Button>
-                </DialogActions>
-            </Dialog>
-            <Dialog open={editopen} onClose={handleEditClose} maxWidth="lg" scroll="paper">
-                <DialogTitle sx={{fontSize:24, fontWeight:'large'}}>Job Details</DialogTitle>
-                <DialogContent>
-                <SampleContextProvider1>
-                    <Editjob />
-                </SampleContextProvider1>
-                </DialogContent>
-                <DialogActions>
-                    <Button onClick={handleEditClose} color="secondary" className="float-left">DELETE</Button>
-                    <Button onClick={handleEditClose} color="primary">CANCEL</Button>
-                    <Button onClick={handleEditClose} color="primary">SAVE</Button>
-                </DialogActions>
-            </Dialog>
+        ></MaterialTable>        
       </div>
     </div>
   );

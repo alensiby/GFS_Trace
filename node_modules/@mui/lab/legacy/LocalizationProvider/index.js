@@ -1,2 +1,1 @@
-export * from './LocalizationProvider';
-export { default } from './LocalizationProvider';
+export { LocalizationProvider as default } from '@mui/x-date-pickers/LocalizationProvider';

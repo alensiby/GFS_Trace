@@ -1,7 +1,9 @@
 import React from 'react'
 import MaterialTable,{ MTableToolbar } from 'material-table';
 import CreateIcon from '@mui/icons-material/Create';
+import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
 import DeleteIcon from '@mui/icons-material/Delete';
+
 import Export from '../../../export.png';
 import { ingoing_data } from '../../../../../Data/InventoryWaterData';
 import { Checkbox } from "semantic-ui-react";
@@ -48,6 +50,7 @@ export default function Ingoing() {
                 data={data}
                 columns={selected ? columns_archived : columns}
                 editable={{
+                  onRowAdd:(newRow)=> new Promise((resolve,reject)=>{}),
                     onRowUpdate: (newData, oldData) =>
                       new Promise((resolve, reject) => {
                         setTimeout(() => {
@@ -96,8 +99,12 @@ export default function Ingoing() {
                 }}
                 icons={{
                     Export: () => <img src={Export}></img>,
-                    Edit: () => <CreateIcon color="action" />,
-                    Delete: () => <DeleteIcon color="action" />
+                    
+                      Add: () => <AddCircleRoundedIcon fontSize="large" color="primary" />,
+                      Edit: () => <CreateIcon color="action" />,
+                      Delete: () => <DeleteIcon color="action" />
+                     
+                   
                   }}
             />
         </div>

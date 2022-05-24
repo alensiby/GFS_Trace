@@ -141,34 +141,34 @@ export default function Users() {
                 defaultValue={rowdatas.last_name}
               />
             </Form.Group>
-            {rowdatas.user_role==='Owner'?
-             
-             ''
-            :
-            <Form.Group inline>
-              <Form.Field required>
-                <label>User Roles</label>
-                <Dropdown
-                  widths={5}
-                  fluid
-                  clearable
-                  selection
-                  options={roles}
-                  defaultValue={(roles.value = rowdatas.user_role)}
-                />
-              </Form.Field>
-              <Form.Field>
-                <label>User Permissions</label>
-                <Dropdown
-                  multiple
-                  fluid
-                  selection
-                  options={options}
-                  defaultValue={(options.values = rowdatas.permissions)}
-                />
-              </Form.Field>
-            </Form.Group>}
-           
+            {rowdatas.user_role === "Owner" ? (
+              ""
+            ) : (
+              <Form.Group inline>
+                <Form.Field required>
+                  <label>User Roles</label>
+                  <Dropdown
+                    widths={5}
+                    fluid
+                    clearable
+                    selection
+                    options={roles}
+                    defaultValue={(roles.value = rowdatas.user_role)}
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>User Permissions</label>
+                  <Dropdown
+                    multiple
+                    fluid
+                    selection
+                    options={options}
+                    defaultValue={(options.values = rowdatas.permissions)}
+                  />
+                </Form.Field>
+              </Form.Group>
+            )}
+
             <Form.Input
               fluid
               width={6}

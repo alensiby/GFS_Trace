@@ -3,6 +3,9 @@ import MaterialTable, { MTableToolbar } from 'material-table';
 import Export from '../../../export.png';
 import { chemicals_data } from '../../../../../Data/InventoryChemicalData';
 import { Checkbox } from "semantic-ui-react";
+import CreateIcon from '@mui/icons-material/Create';
+import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
+import DeleteIcon from '@mui/icons-material/Delete';
 import './archived.css';
 export default function Chemicals() {
     const [selected, toggleselected] = React.useState(false);
@@ -40,12 +43,14 @@ export default function Chemicals() {
                 columns={selected ? columns_archived : columns}
 
                 options={{
+                    
                     paging: true,
                     pageSizeOptions: [2, 5, 10, 15, 20],
                     paginationType: "stepped",
                     showFirstLastPageButtons: false,
-                    exportButton: true,
-                }}
+                    filtering: true,
+                    actionsColumnIndex:-1
+                  }}
                 components={{
                     Toolbar: props => (
                       <div>
@@ -61,9 +66,19 @@ export default function Chemicals() {
                       </div>
                     ),
                   }}
-                icons={{
-                    Export: () => <img src={Export}></img>,
+                  editable={{
+                    onRowAdd:(newRow)=> new Promise((resolve,reject)=>{}),
+                    onRowUpdate:(newRow,oldRow)=> new Promise(()=>{}),
+                    onRowDelete:(selectedRow)=> new Promise(()=>{})
                   }}
+                  icons={{
+                    Add: () => <AddCircleRoundedIcon fontSize="large" color="primary" />,
+                    Edit: () => <CreateIcon color="action" />,
+                    Export: () => <img src={Export}></img>,
+                    Delete: () => <DeleteIcon color="action" />
+                   
+                  }}
+                
             />
         </div>
     )
