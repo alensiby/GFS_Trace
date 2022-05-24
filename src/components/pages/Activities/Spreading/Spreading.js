@@ -11,33 +11,46 @@ import {
     spreadingData_withcomplete,
 } from "../../../../Data/SpreadingData";
 
+import farm from "../../../../Data/farmData";
+
 export default function Spreading() {
   const [selected, toggleselected] = useState(false);
   
+  var obj = farm.reduce(function(acc, cur, i) {
+    acc[cur.farm_id] = cur.value;
+
+    return acc;
+  }, {});
+  console.log(obj);
+  
+  
   const columns = [
+    {
+      title: "Farm", field: "farm", lookup: obj, 
+    },
     {
       title: "Status",
       field: "status",
      
      
-      lookup: { '0': 'Raised',
-      '1': 'Raised and Assigned',
-      '2': 'In Progress',
-      '3': 'On Hold',
-      '4': 'Completed',
+    
+      lookup: { '0': 'Started',
+      '1': 'In-progress',
+      '2': 'Completed',
+      '3': 'Cancelled',
+     
       } ,
       render: rowData => {
         switch (rowData.status) {
         case '0':
                 return <Icon name='blue circle outline' size='large'/>
-        case '4':
+        case '2':
                 return <Icon name='green circle' size='large'/>
         case '1':
                 return <Icon name='blue circle'size='large'/>
         case '3':
                return <Icon name='red circle'size='large'/>
-        case '2':
-               return <Icon name='orange circle'size='large'/>
+        
       default:
         return <></>
           }
@@ -46,20 +59,24 @@ export default function Spreading() {
   
 },
     
+   
 { title: "Contract", field: "contract",  
-lookup: { 'no': 'No',
-'yes': 'Yes'}
+lookup: { '0': 'No',
+'1': 'Yes'}
 },
     
-    { title: "Approved", field: "approved",lookup: { 'no': 'No',
-    'yes': 'Yes'}
+    { title: "Approved", field: "approved",lookup: { '0': 'No',
+    '1': 'Yes'}
+    
    },
     { title: "Description", field: "description" },
-    { title: "Scheduled Date", field: "scheduleddate", type:"date", filtering: false },
-    { title: "Started", field: "started",lookup: { 'no': 'No',
-    'yes': 'Yes'} },
-    { title: "Completed", field: "completed", lookup: { 'no': 'No',
-    'yes': 'Yes'} },
+    { title: "Due Date", field: "duedate", type:"date", filtering: false },
+    { title: "Started", field: "started",lookup: { '0': 'No',
+    '1': 'Yes'}
+    },
+    { title: "Completed", field: "completed", lookup: { '0': 'No',
+    '1': 'Yes'}
+    },
     
   ];
  

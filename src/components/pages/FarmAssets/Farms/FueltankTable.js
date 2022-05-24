@@ -5,8 +5,9 @@ import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
 import DeleteIcon from '@mui/icons-material/Delete';
 import FuelTankData from '../../../../Data/FuelTankData';
 
-export default function FueltankTable() {
-  
+export default function FueltankTable(props) {
+    const farm = props.farm;
+    
 
     const columns = [{
         title: 'Name', field: 'name'

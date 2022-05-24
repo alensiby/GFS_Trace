@@ -20,7 +20,7 @@ export default function Farms() {
   function FarmDropdown() {
    
           
-              options = farm.map((el) => <option value={el.value} key={el.value}>{el.value}</option>
+              options = farm.map((el) => <option value={el.value} key={el.farm_id}>{el.value}</option>
                         );
           
      if(selectFarm===" ")
@@ -42,7 +42,7 @@ export default function Farms() {
                             
                   <div class="inputfield">
                       <div class="custom_select"> 
-                      <select value={selectFarm} onChange={(e) => setselectFarm(e.target.value)}>            
+                      <select value={selectFarm} onChange={(e) => {setselectFarm(e.target.value); }}>            
                           {options}
                           </select>
                       </div>

@@ -5,8 +5,8 @@ import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
 import DeleteIcon from '@mui/icons-material/Delete';
 import WaterStorageData from '../../../../Data/WaterStorageData';
 
-export default function WaterStorageTable() {
-  
+export default function WaterStorageTable(props) {
+  const farm = props.farm;
 
   const columns = [{
       title: 'Name', field: 'name'

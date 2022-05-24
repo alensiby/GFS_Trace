@@ -3,7 +3,8 @@ import {Menu} from 'semantic-ui-react';
 import TableDetails from './tableDetails'
 
 
-export default function FarmTable()  {
+export default function FarmTable(props)  {
+  const farm = props.farm;
     const [state, setState] = useState("PADDOCK"); 
 
       return (
@@ -37,7 +38,7 @@ export default function FarmTable()  {
            
           </Menu>
           
-         <TableDetails dataValue={state}/>
+         <TableDetails dataValue={state} farm={farm}/>
       <br></br>
          
         </div>

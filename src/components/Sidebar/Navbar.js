@@ -49,7 +49,7 @@ export default function Navbar(props) {
           <Link to="/" />
           <Trans i18nKey="navbar.dashboard">Dashboard</Trans>
         </Menu.Item> */}
-        <SubMenu key="sub4" icon={<GiFarmTractor />} title={<Trans i18nKey="navbar.farmassets">
+        <SubMenu key="sub1" icon={<GiFarmTractor />} title={<Trans i18nKey="navbar.farmassets">
             Farm Assets
             </Trans>}>
           <Menu.Item key="1" icon={<GiField />}>
@@ -63,49 +63,49 @@ export default function Navbar(props) {
             Rain
             </Trans>
           </Menu.Item> */}
-          <Menu.Item key="22" icon={<GiGrainBundle />}>
+          <Menu.Item key="2" icon={<GiGrainBundle />}>
             <Link to="/Cultivars" />
             <Trans i18nKey="navbar.cultivars">
            Cultivars
             </Trans>
           </Menu.Item>
-          <Menu.Item key="23" icon={<GiGoat />}>
+          <Menu.Item key="3" icon={<GiGoat />}>
             <Link to="/Livestock" />
             <Trans i18nKey="navbar.livestock">
             Livestock
             </Trans>
           </Menu.Item>
-          <Menu.Item key="24" icon={<FaTools />}>
+          <Menu.Item key="4" icon={<FaTools />}>
             <Link to="/Equipments" />
             <Trans i18nKey="navbar.equipments">
             Equipments
             </Trans>
           </Menu.Item>
-          <Menu.Item key="25" icon={<GiChemicalDrop />}>
+          <Menu.Item key="5" icon={<GiChemicalDrop />}>
             <Link to="/Chemicals" />
             <Trans i18nKey="navbar.chemicals">
             Chemicals
             </Trans>
           </Menu.Item>
-          <Menu.Item key="26" icon={<GiFertilizerBag />}>
+          <Menu.Item key="6" icon={<GiFertilizerBag />}>
             <Link to="/Fertiliser" />
             <Trans i18nKey="navbar.fertilizers">
             Fertilizers
             </Trans>
           </Menu.Item>
-          <Menu.Item key="27" icon={<FaUsers />}>
+          <Menu.Item key="7" icon={<FaUsers />}>
             <Link to="/Users" />
             <Trans i18nKey="navbar.users">
             Users
             </Trans>
           </Menu.Item>
-          <Menu.Item key="28" icon={<FaSprayCan />}>
+          <Menu.Item key="8" icon={<FaSprayCan />}>
             <Link to="/Nozzles" />
             <Trans i18nKey="navbar.nozzles">
             Nozzles
             </Trans>
           </Menu.Item>
-          <Menu.Item key="29" icon={<MdVerified />}>
+          <Menu.Item key="9" icon={<MdVerified />}>
             <Link to="/Waterlicence" />
             <Trans i18nKey="navbar.water_licences">
             Water Licences
@@ -113,66 +113,66 @@ export default function Navbar(props) {
           </Menu.Item>
         </SubMenu>
         
-        <Menu.Item key="3" icon={<GoProject />}>
+        <Menu.Item key="10" icon={<GoProject />}>
           <Link to="/Jobs" />
           <Trans i18nKey="navbar.jobs">Jobs</Trans>
         </Menu.Item>
         <SubMenu
-          key="sub1"
+          key="sub2"
           icon={<FaTasks />}
           title={<Trans i18nKey="navbar.activities">Activities</Trans>}
         >
           {/* <Menu.Item key="4" icon={<VscOpenPreview />}>
             <Trans i18nKey="navbar.activity_reports">Activity Reports</Trans>
           </Menu.Item> */}
-          <Menu.Item key="5" icon={<ImDroplet />}>
+          <Menu.Item key="11" icon={<ImDroplet />}>
           <Link to="/Spraylogs" />
             <Trans i18nKey="navbar.spray_logs">Spray Logs</Trans>
           </Menu.Item>
-          <Menu.Item key="6" icon={<GiGroundSprout />}>
+          <Menu.Item key="12" icon={<GiGroundSprout />}>
           <Link to="/Planting" />
           <Trans i18nKey="navbar.planting">
             Planting
             </Trans>
           </Menu.Item>
-          <Menu.Item key="7" icon={<GiWheat />}>
+          <Menu.Item key="13" icon={<GiWheat />}>
           <Link to="/Spreading" />
           <Trans i18nKey="navbar.spreading">
             Spreading
             </Trans>
           </Menu.Item>
-          <Menu.Item key="8" icon={<GiFruitTree />}>
+          <Menu.Item key="14" icon={<GiFruitTree />}>
           <Link to="/Harvest" />
           <Trans i18nKey="navbar.harvest">
            Harvest
             </Trans>
           </Menu.Item>
-          <Menu.Item key="9" icon={<GiAutoRepair />}>
+          <Menu.Item key="15" icon={<GiAutoRepair />}>
           <Link to="/Maintenance" />
           <Trans i18nKey="navbar.maintainance">
             Maintenance
             </Trans>
           </Menu.Item>
-          <Menu.Item key="10" icon={<GiPlantWatering />}>
+          <Menu.Item key="16" icon={<GiPlantWatering />}>
           <Link to="/Irrigation" />
           <Trans i18nKey="navbar.irrigation">
             Irrigation
             </Trans>
           </Menu.Item>
-          <Menu.Item key="11" icon={<SiHappycow />}>
+          <Menu.Item key="17" icon={<SiHappycow />}>
           <Link to="/Grazing" />
           <Trans i18nKey="navbar.grazing">
             Grazing
             </Trans>
           </Menu.Item>
-          <Menu.Item key="12" icon={<GiMedicalPackAlt />}>
+          <Menu.Item key="18" icon={<GiMedicalPackAlt />}>
           <Link to="/VetTreatment" />
           <Trans i18nKey="navbar.vettreatment">
             Vet Treatments
             </Trans>
           </Menu.Item>
         </SubMenu>
-        <SubMenu key="sub2" icon={<FaWarehouse />} title={<Trans i18nKey="navbar.inventory">
+        <SubMenu key="sub3" icon={<FaWarehouse />} title={<Trans i18nKey="navbar.inventory">
             Inventory
             </Trans>}>
           {/* <Menu.Item key="13" icon={<VscOpenPreview />}>
@@ -181,31 +181,31 @@ export default function Navbar(props) {
             Inventory Reports
             </Trans>
           </Menu.Item> */}
-          <Menu.Item key="14" icon={<GiGrain />}>
+          <Menu.Item key="19" icon={<GiGrain />}>
          <Link to="/Grain" />
           <Trans i18nKey="navbar.grain">
             Grain
             </Trans>
           </Menu.Item>
-          <Menu.Item key="15" icon={<GiChemicalDrop />}>
+          <Menu.Item key="20" icon={<GiChemicalDrop />}>
             <Link to="/InventoryChemical" />
             <Trans i18nKey="navbar.chemical">
             Chemical
             </Trans>
           </Menu.Item>
-          <Menu.Item key="16" icon={<GiFertilizerBag />}>
+          <Menu.Item key="21" icon={<GiFertilizerBag />}>
           <Link to="/InventoryFertilizer" />
           <Trans i18nKey="navbar.fertilizer">
             Fertilizer
             </Trans>
           </Menu.Item>
-          <Menu.Item key="17" icon={<GiFuelTank />}>
+          <Menu.Item key="22" icon={<GiFuelTank />}>
           <Link to="/InventoryFuel" />
           <Trans i18nKey="navbar.fuel">
             Fuel
             </Trans>
           </Menu.Item>
-          <Menu.Item key="18" icon={<FaHandHoldingWater />}>
+          <Menu.Item key="23" icon={<FaHandHoldingWater />}>
           <Link to="/InventoryWater" />
           <Trans i18nKey="navbar.water">
             Water

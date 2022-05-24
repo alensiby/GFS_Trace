@@ -43,9 +43,7 @@ function FarmReport() {
   {
     title: 'Paddocks', field: 'paddocks',
   },
-  {
-    title: 'Area', field: 'area',
-  },
+  
   {
     title: 'Completed', field: 'completed',
   },
@@ -65,12 +63,7 @@ function FarmReport() {
   {
     title: "Farms", field: "farms",
   },
-  {
-    title: 'Paddocks', field: 'paddocks',
-  },
-  {
-    title: 'Area', field: 'area',
-  },
+ 
   {
     title: 'Completed', field: 'completed',
   },
@@ -90,12 +83,7 @@ function FarmReport() {
   {
     title: 'Description', field: 'description',
   },
-  {
-    title: 'Paddocks', field: 'paddocks',
-  },
-  {
-    title: 'Area', field: 'area',
-  },
+ 
   {
     title: 'Completed', field: 'completed',
   },
@@ -112,12 +100,7 @@ function FarmReport() {
   {
     title: 'Description', field: 'description',
   },
-  {
-    title: 'Paddocks', field: 'paddocks',
-  },
-  {
-    title: 'Area', field: 'area',
-  },
+  
   {
     title: 'Completed', field: 'completed',
   },
