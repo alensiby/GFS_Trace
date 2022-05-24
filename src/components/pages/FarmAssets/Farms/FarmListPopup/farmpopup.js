@@ -9,7 +9,7 @@ export default function Farmpopup(props) {
   const [addOpen, setAddOpen] = React.useState(false)
   const [editOpen, setEditOpen] = React.useState(false)
   const [deleteOpen, setDeleteOpen] = React.useState(false)
-  const [state, setState] = useState(' '); 
+  const [state, setState] = useState(Value); 
   
   const [farm,setfarm]=useState([
     {value:"Farm1"},

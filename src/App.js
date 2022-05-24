@@ -14,6 +14,7 @@ import Chemicals from "./components/pages/FarmAssets/Chemicals/Chemical";
 import Users from "./components/pages/FarmAssets/Users/Users";
 import Fertiliser from "./components/pages/FarmAssets/Fertiliser/FertiliserTable";
 import Livestock from "./components/pages/FarmAssets/Livestock/LiveStock";
+import Cultivars from "./components/pages/FarmAssets/Cultivars/Table";
 import WaterLicence from "./components/pages/FarmAssets/WaterLicence/WaterLicence";
 import Nozzles from "./components/pages/FarmAssets/Nozzles/Nozzles";
 import InventoryChemical from "./components/pages/Inventory/InventoryChemical/InventoryChemical";
@@ -66,6 +67,7 @@ function App (){
             <Route path="/Maintenance" element={<Maintenance/>}/>
             <Route path="/VetTreatment" element={<VetTreatment/>}/>
             <Route path="/Custom" element={<Custom/>}/>
+            <Route path="/Cultivars" element={<Cultivars/>}/>
             <Route path="/InventoryReport" element={<Inventoryreport/>}/>
             <Route path="/Grain" element={<Grain/>}/>
            

@@ -4,9 +4,8 @@ import CreateIcon from '@mui/icons-material/Create';
 import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SiloData from '../../../../Data/SiloData';
-export default function SiloTable() {
-    
-    
+export default function SiloTable(props) {
+    const farm = props.farm;
 
    
   const columns = [{

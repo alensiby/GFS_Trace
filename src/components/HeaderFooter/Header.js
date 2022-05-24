@@ -11,7 +11,7 @@ export default function Header() {
         <b>GFS</b> Trace
       </div>
       <div className="spacer"></div>
-      <span className="userDetails">Align Agith </span> |
+      <span className="userDetails">Ashish Abhilash </span> |
       
      
       <button className="logout"><Trans i18nKey="header.logout"> Logout

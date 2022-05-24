@@ -4,8 +4,8 @@ import CreateIcon from '@mui/icons-material/Create';
 import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
 import DeleteIcon from '@mui/icons-material/Delete';
 import PaddockData from "../../../../Data/PaddockData";
-export default function PaddockTable() {
-   
+export default function PaddockTable(props) {
+    const farm = props.farm;
     
 
     
