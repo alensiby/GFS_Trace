@@ -30,6 +30,8 @@ import Custom from "./components/pages/CustomReport/Custom";
 import InventoryFuel from "./components/pages/Inventory/FuelInventory/FuelTable";
 import InventoryFertilizer from "./components/pages/Inventory/FertilizerInventory/InventoryFertilizer";
 import Inventoryreport from "./components/pages/Inventory/InventoryReport/Inventoryreport";
+import Forget from "./components/pages/Login/Forget";
+import SignUp from "./components/pages/Login/SignUp";
 function App (){
   const {i18n}=useTranslation();
   
@@ -48,6 +50,8 @@ function App (){
             <Route path="/Fertiliser" element={<Fertiliser/>}/>
             <Route path="/Nozzles" element={<Nozzles/>}/>
             <Route path="/Livestock" element={<Livestock/>}/>
+            <Route path="/Forget" element={<Forget/>}/>
+            <Route path='/Signup' element={<SignUp/>}/>
             <Route path="/WaterLicence" element={<WaterLicence/>}/>
             <Route path="/InventoryChemical" element={<InventoryChemical/>}/>
             <Route path="/InventoryFertilizer" element={<InventoryFertilizer/>}/>

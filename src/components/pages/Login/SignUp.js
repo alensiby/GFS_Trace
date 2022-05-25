@@ -1,11 +1,9 @@
 import React from 'react'
 import './Login.css'
-<<<<<<< HEAD
-import farmsimple from './farmsimple.PNG'
-=======
->>>>>>> 39f75890a0f86d91af8a4395df7154be002d9e18
-import { Link } from 'react-router-dom'
+
+import { Link,useNavigate } from 'react-router-dom'
 function SignUp() {
+    var browserHistory = useNavigate();
     return (
         <div className="signin-container">
             <form className="input-section">
@@ -16,15 +14,13 @@ function SignUp() {
                 <input type="text" placeholder="Last Name" />
                 <input type="text" placeholder="Company Name" />
                 <input type="text" placeholder="Email" />
-<<<<<<< HEAD
-=======
                 <input type="text" placeholder="Password" />
                 <input type="text" placeholder="Re-enter password" />
->>>>>>> 39f75890a0f86d91af8a4395df7154be002d9e18
             </form>
             <div className="v-card__actions">
-                <Link to="/" className="btn-cancel">CANCEL</Link>
-                <Link to="/Loggedin" className="btn-signup">SIGN UP</Link>
+                <div onClick={()=>browserHistory(-1)}className="btn-cancel">CANCEL</div>
+                <div onClick={()=>browserHistory(-1)}className="btn-signup">SIGN UP</div>
+            
             </div>
         </div>
     )

@@ -1,6 +1,6 @@
 body{
     margin:0;
-    background: url("../../../images/bg.jpeg") no-repeat center center fixed;
+    background: url("../../../images/bg.jpeg") ;
     background-size: cover;
     overflow:hidden;
     
@@ -116,6 +116,7 @@ input::placeholder{
     display: flex;
     justify-content:flex-start;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .v-card__actions {

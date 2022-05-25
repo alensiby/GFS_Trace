@@ -6,13 +6,15 @@ import Navbar from '../Sidebar/Navbar';
 import Headerbar from '../HeaderFooter/Header';
 import Footerbar from '../HeaderFooter/footer';
 import SignIn from '../pages/Login/SignIn';
+import Forget from '../pages/Login/Forget';
+import SignUp from '../pages/Login/SignUp';
 
 const { Header, Content, Footer, Sider } = Layout;
 export default function Structure({children}) {
   const [collapsed, setcollapsed] = useState(false);
 
   return (<>
-  {window.location.pathname==="/Login"?<SignIn/>:
+  {window.location.pathname==="/Login"?<SignIn/>:window.location.pathname==="/Forget"?<Forget/>:window.location.pathname==="/Signup"?<SignUp/>:
    <Layout style={{ minHeight: '100vh' }}>
       <Sider 
        collapsible  collapsed={collapsed} onCollapse={setcollapsed} >
